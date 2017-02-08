@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home-->
         <scene sceneID="zLY-H4-ZPH">
             <objects>
-                <viewController id="Cgb-k1-2nH" sceneMemberID="viewController">
+                <viewController id="Cgb-k1-2nH" customClass="VCHome" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hK7-lr-eGy"/>
                         <viewControllerLayoutGuide type="bottom" id="jd5-hc-Vf1"/>
@@ -35,10 +35,10 @@
             </objects>
             <point key="canvasLocation" x="-3092" y="-869"/>
         </scene>
-        <!--View Controller-->
+        <!--Check In-->
         <scene sceneID="P5o-oV-p0D">
             <objects>
-                <viewController id="PcD-2S-prI" sceneMemberID="viewController">
+                <viewController id="PcD-2S-prI" customClass="VCCheckIn" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XKP-QI-Ng7"/>
                         <viewControllerLayoutGuide type="bottom" id="Mfc-DQ-kZ6"/>
@@ -117,10 +117,10 @@
             </objects>
             <point key="canvasLocation" x="449" y="-1820"/>
         </scene>
-        <!--View Controller-->
+        <!--Friends-->
         <scene sceneID="nxg-l4-U8v">
             <objects>
-                <viewController id="eAE-GZ-2la" sceneMemberID="viewController">
+                <viewController id="eAE-GZ-2la" customClass="VCFriends" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kHV-2Q-JbH"/>
                         <viewControllerLayoutGuide type="bottom" id="9ze-3p-LCy"/>
@@ -130,25 +130,43 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="obT-LC-5i4">
-                                <frame key="frameInset" minX="11" minY="188" width="354" height="300"/>
+                                <frame key="frameInset" minX="10" minY="20" width="354" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="friends"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="aeI-lv-GsY"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" restorationIdentifier="mytable" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sS4-E8-Tja">
+                                <frame key="frameInset" minX="16" minY="328" width="343" height="319"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="mycell" selectionStyle="default" indentationWidth="10" reuseIdentifier="mycell" id="SxC-Pm-m37">
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="cellid" tableViewCell="SxC-Pm-m37" id="ijM-eC-K5D">
+                                            <frame key="frameInset" width="343" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="TVFriendsOutlet" destination="sS4-E8-Tja" id="sXr-D7-BXe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="en1-C8-PSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-233" y="-869"/>
+            <point key="canvasLocation" x="-234.40000000000001" y="-869.41529235382313"/>
         </scene>
-        <!--View Controller-->
+        <!--Deals-->
         <scene sceneID="btP-Tr-oJo">
             <objects>
-                <viewController id="gL0-HJ-jMe" sceneMemberID="viewController">
+                <viewController id="gL0-HJ-jMe" customClass="VCDeals" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n9U-8T-6LD"/>
                         <viewControllerLayoutGuide type="bottom" id="Mtq-dw-Cai"/>
@@ -173,10 +191,10 @@
             </objects>
             <point key="canvasLocation" x="1103" y="-869"/>
         </scene>
-        <!--View Controller-->
+        <!--Chat-->
         <scene sceneID="QR8-Kb-K0A">
             <objects>
-                <viewController id="8Zo-4a-klM" sceneMemberID="viewController">
+                <viewController id="8Zo-4a-klM" customClass="VCChat" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AeY-et-9UV"/>
                         <viewControllerLayoutGuide type="bottom" id="ocv-nC-8CG"/>
@@ -457,6 +475,6 @@
         <image name="logout" width="300" height="300"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RzR-ib-yxn"/>
+        <segue reference="aeI-lv-GsY"/>
     </inferredMetricsTieBreakers>
 </document>
