@@ -82,5 +82,84 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "localLandings/VCFriends.swift"
+            timestampString = "508272453.85842"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "tableView(_:cellForRowAt:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "localLandings/VCFriends.swift"
+            timestampString = "508272578.910581"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "FriendsCustomCell"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "localLandings.FriendsCustomCell.cat.getter : Swift.Int"
+                  moduleName = "localLandings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jeff/Documents/IOS/localLandings/localLandings/VCFriends.swift"
+                  timestampString = "508273469.837937"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "19">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "localLandings.FriendsCustomCell.init (style : __C.UITableViewCellStyle, reuseIdentifier : Swift.Optional&lt;Swift.String&gt;) -&gt; localLandings.FriendsCustomCell"
+                  moduleName = "localLandings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jeff/Documents/IOS/localLandings/localLandings/VCFriends.swift"
+                  timestampString = "508273469.84413"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "190">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "localLandings.FriendsCustomCell.init (coder : __ObjC.NSCoder) -&gt; Swift.Optional&lt;localLandings.FriendsCustomCell&gt;"
+                  moduleName = "localLandings"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Jeff/Documents/IOS/localLandings/localLandings/VCFriends.swift"
+                  timestampString = "508273469.846214"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "16"
+                  endingLineNumber = "16"
+                  offsetFromSymbolStart = "126">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -8,13 +8,26 @@
 
 import UIKit
 
+class FriendsCustomCell : UITableViewCell {
+    @IBOutlet weak var leftlabel: UILabel!
+
+    @IBOutlet weak var rightlabel: UILabel!
+    
+    var cat = 12
+}
+
+
 class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
    
     //MARK: Properties
     let dataStore = IceCreamStore()
+
     @IBOutlet weak var TVFriendsOutlet: UITableView!
+
+
     
-    let myCell = "mycell"
+    let myCell = "reuseme"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +37,9 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
         // Setup delegate / datasource
         TVFriendsOutlet.delegate = self
         TVFriendsOutlet.dataSource = self
+        
+//        self.TVFriendsOutlet.register(FriendsCustomCell.self, forCellReuseIdentifier: myCell)
+
         
         var request = URLRequest(url: URL(string: "http://ll.bunnyhutt.com/friendsdummy.php")!)
         request.httpMethod = "POST"
@@ -63,16 +79,23 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
         return dataStore.allFlavors().count
     }
     
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath as IndexPath)
-        cell.textLabel?.text=dataStore.allFlavors()[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath) as! FriendsCustomCell
+        
+        //This populates the cells
+        //cell.textLabel?.text=dataStore.allFlavors()[indexPath.row]
+        
+        //This doesn't.
+        cell.leftlabel?.text = dataStore.allFlavors()[indexPath.row]
+        cell.rightlabel?.text = "You GTBSM"
+        
         print("found a cell")
         return cell
+        
     }
-    
-    
-    
+
     
     func numberOfSections(in tableView: UITableView) -> Int{
         return 1
@@ -94,4 +117,6 @@ class IceCreamStore
         return flavors
     }
 }
+
+
 
