@@ -12,6 +12,11 @@
 		1F1D12531E4A3CBA00077A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D12511E4A3CBA00077A73 /* Main.storyboard */; };
 		1F1D12551E4A3CBA00077A73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D12541E4A3CBA00077A73 /* Assets.xcassets */; };
 		1F1D12581E4A3CBA00077A73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D12561E4A3CBA00077A73 /* LaunchScreen.storyboard */; };
+		1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E991E4B6EFD0018C06F /* VCChat.swift */; };
+		1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */; };
+		1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */; };
+		1FE36EA11E4B6EFD0018C06F /* VCFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */; };
+		1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		1F1D12541E4A3CBA00077A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F1D12571E4A3CBA00077A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F1D12591E4A3CBA00077A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1FE36E991E4B6EFD0018C06F /* VCChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCChat.swift; sourceTree = "<group>"; };
+		1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCheckIn.swift; sourceTree = "<group>"; };
+		1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCDeals.swift; sourceTree = "<group>"; };
+		1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCFriends.swift; sourceTree = "<group>"; };
+		1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCHome.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +64,11 @@
 		1F1D124C1E4A3CBA00077A73 /* localLandings */ = {
 			isa = PBXGroup;
 			children = (
+				1FE36E991E4B6EFD0018C06F /* VCChat.swift */,
+				1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */,
+				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
+				1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */,
+				1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */,
 				1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */,
 				1F1D124F1E4A3CBA00077A73 /* ViewController.swift */,
 				1F1D12511E4A3CBA00077A73 /* Main.storyboard */,
@@ -136,7 +151,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */,
+				1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */,
+				1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */,
+				1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */,
 				1F1D12501E4A3CBA00077A73 /* ViewController.swift in Sources */,
+				1FE36EA11E4B6EFD0018C06F /* VCFriends.swift in Sources */,
 				1F1D124E1E4A3CBA00077A73 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -299,6 +319,7 @@
 				1F1D125E1E4A3CBA00077A73 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
