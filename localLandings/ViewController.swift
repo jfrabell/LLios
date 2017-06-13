@@ -32,7 +32,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         
         locationManager = CLLocationManager()
         initializeLocationManager(locationManager: locationManager)
-        
+                
     }
     
     //MARK: UITextFieldDelegate
@@ -49,7 +49,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     
     //MARK: Actions
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "FUCK YEAH"
+        mealNameLabel.text = "I meant yay"
     }
     
     //Start the location manager
@@ -83,5 +83,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         self.mapView.userTrackingMode = .follow
         
     }
+    
     
 }

@@ -1,24 +1,22 @@
 //
-//  VCChat.swift
+//  UtilityViewController.swift
 //  localLandings
 //
-//  Created by Jeff Frabell on 2/7/17.
+//  Created by Jeff Frabell on 2/9/17.
 //  Copyright © 2017 POR. All rights reserved.
 //
 
 import UIKit
 
-class VCChat: UIViewController {
-
+class UtilityViewController: UIViewController {
+    //queue is used for all dispatch controller stuff
     let queue = DispatchQueue(label: "com.bunnyhutt.myqueue")
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        print("Chat")
-        
-        queue.async {
+        queue.sync {
             for i in 0..<10{
                 print("Red dot ",i)
             }
@@ -27,7 +25,6 @@ class VCChat: UIViewController {
         for i in 100..<110 {
             print("Blue M ",i)
         }
-        
     }
 
     override func didReceiveMemoryWarning() {

@@ -17,7 +17,11 @@
 		1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */; };
 		1FE36EA11E4B6EFD0018C06F /* VCFriends.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */; };
 		1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */; };
-		1FE36EA61E4B76370018C06F /* FriendsCustomCell.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1FE36EA51E4B76370018C06F /* FriendsCustomCell.storyboard */; };
+		1FE36EA91E4CA0D60018C06F /* UtilityClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EA81E4CA0D60018C06F /* UtilityClass.swift */; };
+		1FE36EAB1E4CAF840018C06F /* IceCreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAA1E4CAF840018C06F /* IceCreamStore.swift */; };
+		1FE36EAD1E4CAFF40018C06F /* FriendsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAC1E4CAFF40018C06F /* FriendsCustomCell.swift */; };
+		1FE36EAF1E4CB0D20018C06F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAE1E4CB0D20018C06F /* PostRequest.swift */; };
+		1FE36EB11E4CDED00018C06F /* UtilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,7 +37,11 @@
 		1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCDeals.swift; sourceTree = "<group>"; };
 		1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCFriends.swift; sourceTree = "<group>"; };
 		1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCHome.swift; sourceTree = "<group>"; };
-		1FE36EA51E4B76370018C06F /* FriendsCustomCell.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = FriendsCustomCell.storyboard; sourceTree = "<group>"; };
+		1FE36EA81E4CA0D60018C06F /* UtilityClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityClass.swift; sourceTree = "<group>"; };
+		1FE36EAA1E4CAF840018C06F /* IceCreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamStore.swift; sourceTree = "<group>"; };
+		1FE36EAC1E4CAFF40018C06F /* FriendsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCustomCell.swift; sourceTree = "<group>"; };
+		1FE36EAE1E4CB0D20018C06F /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
+		1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,20 +74,32 @@
 		1F1D124C1E4A3CBA00077A73 /* localLandings */ = {
 			isa = PBXGroup;
 			children = (
-				1FE36E991E4B6EFD0018C06F /* VCChat.swift */,
-				1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */,
-				1F1D124F1E4A3CBA00077A73 /* ViewController.swift */,
-				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
-				1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */,
-				1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */,
 				1F1D12511E4A3CBA00077A73 /* Main.storyboard */,
+				1F1D124F1E4A3CBA00077A73 /* ViewController.swift */,
+				1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */,
+				1FE36EA81E4CA0D60018C06F /* UtilityClass.swift */,
 				1F1D12541E4A3CBA00077A73 /* Assets.xcassets */,
+				1FE36EA71E4C9F2B0018C06F /* Friends */,
 				1F1D12561E4A3CBA00077A73 /* LaunchScreen.storyboard */,
 				1F1D12591E4A3CBA00077A73 /* Info.plist */,
-				1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */,
-				1FE36EA51E4B76370018C06F /* FriendsCustomCell.storyboard */,
+				1FE36E991E4B6EFD0018C06F /* VCChat.swift */,
+				1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */,
+				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
+				1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */,
+				1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */,
 			);
 			path = localLandings;
+			sourceTree = "<group>";
+		};
+		1FE36EA71E4C9F2B0018C06F /* Friends */ = {
+			isa = PBXGroup;
+			children = (
+				1FE36E9C1E4B6EFD0018C06F /* VCFriends.swift */,
+				1FE36EAA1E4CAF840018C06F /* IceCreamStore.swift */,
+				1FE36EAC1E4CAFF40018C06F /* FriendsCustomCell.swift */,
+				1FE36EAE1E4CB0D20018C06F /* PostRequest.swift */,
+			);
+			name = Friends;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,7 +162,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1F1D12581E4A3CBA00077A73 /* LaunchScreen.storyboard in Resources */,
-				1FE36EA61E4B76370018C06F /* FriendsCustomCell.storyboard in Resources */,
 				1F1D12551E4A3CBA00077A73 /* Assets.xcassets in Resources */,
 				1F1D12531E4A3CBA00077A73 /* Main.storyboard in Resources */,
 			);
@@ -155,13 +174,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FE36EAD1E4CAFF40018C06F /* FriendsCustomCell.swift in Sources */,
+				1FE36EB11E4CDED00018C06F /* UtilityViewController.swift in Sources */,
+				1FE36EAF1E4CB0D20018C06F /* PostRequest.swift in Sources */,
 				1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */,
 				1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */,
 				1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */,
+				1FE36EAB1E4CAF840018C06F /* IceCreamStore.swift in Sources */,
 				1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */,
 				1F1D12501E4A3CBA00077A73 /* ViewController.swift in Sources */,
 				1FE36EA11E4B6EFD0018C06F /* VCFriends.swift in Sources */,
 				1F1D124E1E4A3CBA00077A73 /* AppDelegate.swift in Sources */,
+				1FE36EA91E4CA0D60018C06F /* UtilityClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
