@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  FoodTracker
+//  LocalLandings
 //
 //  Created by Jeff Frabell on 1/28/17.
 //  Copyright © 2017 Jeff Frabell. All rights reserved.
@@ -15,6 +15,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        //Check if airport database is installed, update if necessary.
+    
+        UtilityClass.checkDatabase()
         return true
     }
     

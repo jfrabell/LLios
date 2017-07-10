@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ink-Ef-3pS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="-1609" y="-869"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Friends-->
         <scene sceneID="SMB-9h-FuU">
             <objects>
-                <viewController id="dbz-It-pC2" sceneMemberID="viewController">
+                <viewController title="Add Friends" id="dbz-It-pC2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xhl-n9-ane"/>
                         <viewControllerLayoutGuide type="bottom" id="BAw-lC-wAp"/>
@@ -90,10 +90,10 @@
             </objects>
             <point key="canvasLocation" x="-849" y="-1820"/>
         </scene>
-        <!--View Controller-->
+        <!--Delete Friends-->
         <scene sceneID="V4c-pY-DAI">
             <objects>
-                <viewController id="Ej1-rb-tXz" sceneMemberID="viewController">
+                <viewController title="Delete Friends" id="Ej1-rb-tXz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SOK-BV-VBc"/>
                         <viewControllerLayoutGuide type="bottom" id="ej5-Sr-B3A"/>
@@ -256,10 +256,10 @@
             </objects>
             <point key="canvasLocation" x="2350" y="-869"/>
         </scene>
-        <!--View Controller-->
+        <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Main" title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -395,10 +395,10 @@
             </objects>
             <point key="canvasLocation" x="114.40000000000001" y="111.0944527736132"/>
         </scene>
-        <!--View Controller-->
+        <!--Login-->
         <scene sceneID="uxT-9U-mB2">
             <objects>
-                <viewController id="ink-Ef-3pS" sceneMemberID="viewController">
+                <viewController title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ink-Ef-3pS" customClass="VCLogin" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3PU-yg-bnz"/>
                         <viewControllerLayoutGuide type="bottom" id="F4O-2R-Ykd"/>
@@ -422,6 +422,9 @@
                                             </textField>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-0q-lLY">
                                                 <state key="normal" title="Log In"/>
+                                                <connections>
+                                                    <action selector="click:" destination="ink-Ef-3pS" eventType="touchUpInside" id="Rpu-XF-WmK"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOp-QN-D8b">
                                                 <state key="normal" title="Register"/>
@@ -456,11 +459,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Register" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mle-J4-1Vl">
-                                <frame key="frameInset" minX="16" minY="318" width="343" height="30"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T3f-If-c3O">
+                                <frame key="frameInset" minX="16" minY="20" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UcD-df-SHO">
+                                <frame key="frameInset" minX="16" minY="49" width="42" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="087-p3-ZFY">
+                                <frame key="frameInset" minX="16" minY="78" width="97" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ywe-WD-Pik">
+                                <frame key="frameInset" minX="16" minY="116" width="97" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>

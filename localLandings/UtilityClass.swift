@@ -15,5 +15,11 @@ struct UtilityClass {
     func sayHello()->String{
         return "Hello from the utility class!"
     }
-    
+
+    static func checkDatabase(){
+        print ("checking database for blah blah")
+    }
+
 }
+
+
