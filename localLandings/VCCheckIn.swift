@@ -10,11 +10,79 @@ import UIKit
 
 class VCCheckIn: UIViewController {
     
+    var databasePath = String()
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
         print("Checkin")
+        
+        var databasePath = String()
+        let filemgr = FileManager.default
+        let dirPaths = filemgr.urls(for: .documentDirectory,
+                                    in: .userDomainMask)
+        
+        databasePath = dirPaths[0].appendingPathComponent("user.db").path
+        
+        if !filemgr.fileExists(atPath: databasePath as String) {
+            
+            let userDB = FMDatabase(path: databasePath as String)
+          
+            
+            if (userDB.open()) {
+                print("Database Open")
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, ADDRESS TEXT, PHONE TEXT)"
+                if !(userDB.executeStatements(sql_stmt)) {
+                    print("Error: \(userDB.lastErrorMessage())")
+                }
+                userDB.close()
+            } else {
+                print("Error: \(userDB.lastErrorMessage())")
+            }
+            print("Completed Suckyly")
+        }
+        else
+        {
+        print("Database already created")
+            let userDB = FMDatabase(path: databasePath as String)
+            if (userDB.open()) {
+                print("Database Open")
+                let sql_stmt = "INSERT INTO CONTACTS (NAME,ADDRESS,PHONE) VALUES ('JOE','535','514')"
+                if !(userDB.executeStatements(sql_stmt)) {
+                    print("Error: \(userDB.lastErrorMessage())")
+                }
+            } else {
+                print("Error: \(userDB.lastErrorMessage())")
+            }
+            print("Completed Suckyly")
+
+            if(userDB.open()){
+                let sql_stmtb = "SELECT * FROM CONTACTS"
+                if !(userDB.executeStatements(sql_stmtb)){
+                }
+            }
+            
+            userDB.close()
+            
+            
+        }    /*
+            if (userDB.open()) {
+                print("Database Open")
+                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, ADDRESS TEXT, PHONE TEXT)"
+                if !(userDB.executeStatements(sql_stmt)) {
+                    print("Error: \(userDB.lastErrorMessage())")
+                }
+                userDB.close()
+            } else {
+                print("Error: \(userDB.lastErrorMessage())")
+            }
+            print("Completed Suckyly")
+        }
+        */
+        
+        
         
     }
     
