@@ -28,6 +28,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
         
         // Handle the text field’s user input through delegate callbacks.
+        print("In Viewcontroller.swift")
         nameTextField.delegate = self
         
         locationManager = CLLocationManager()

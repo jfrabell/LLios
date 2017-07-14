@@ -16,12 +16,14 @@ class userDB: NSObject {
     var pathToDatabase: String!
     var database: FMDatabase!
     
-    let table_NAME = "CONTACTS"
+    let table_NAME = "AIRPORTS"
     
     let field_ID = "ID"
     let field_NAME = "NAME"
-    let field_ADDRESS = "ADDRESS"
-    let field_PHONE = "PHONE"
+    let field_THREE = "THREE"
+    let field_FOUR = "FOUR"
+    let field_LAT = "LAT"
+    let field_LON = "LON"
     
     override init() {
         super.init()
@@ -39,7 +41,8 @@ class userDB: NSObject {
             if database != nil {
                 // Open the database.
                 if database.open() {
-                    let createMyTableQuery = "CREATE TABLE IF NOT EXISTS " + table_NAME + "("+field_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, "+field_NAME+" TEXT, "+field_ADDRESS+" TEXT, "+field_PHONE+" TEXT)"
+                    let createMyTableQuery = "CREATE TABLE IF NOT EXISTS " + table_NAME + "("+field_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, " + field_NAME + " TEXT, " + field_THREE +
+                        " TEXT, " + field_FOUR + " TEXT, " + field_LAT + " TEXT, " + field_LON + ")"
                     
                     do {
                         try database.executeUpdate(createMyTableQuery, values: nil)
@@ -78,9 +81,9 @@ class userDB: NSObject {
         return false
     }
     
-    func insertUser(name: String,address: String,phone: String)->Bool {
+    func insertUser(name: String,three: String,four: String,lat: String,lon: String)->Bool {
         if openDatabase() {
-            let query:String = "INSERT INTO " + databaseFileName + "("+field_NAME+","+field_ADDRESS+","+field_PHONE+") VALUES ('"+name+"','"+address+"','"+phone+"')"
+            let query:String = "INSERT INTO " + table_NAME + "(" + field_NAME + "," + field_THREE + "," + field_FOUR + "," + field_LAT + "," + field_LON + ") VALUES ('" + name + "','" + three + "','" + four + "','" + lat + "','" + lon + "')"
          
             if !database.executeStatements(query) {
                 print("Failed to insert initial data into the database.")

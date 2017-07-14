@@ -18,7 +18,7 @@ class VCCheckIn: UIViewController {
         
         // Do any additional setup after loading the view.
         print("Checkin")
-        
+       /*
         var databasePath = String()
         let filemgr = FileManager.default
         let dirPaths = filemgr.urls(for: .documentDirectory,
@@ -67,23 +67,9 @@ class VCCheckIn: UIViewController {
             userDB.close()
             
             
-        }    /*
-            if (userDB.open()) {
-                print("Database Open")
-                let sql_stmt = "CREATE TABLE IF NOT EXISTS CONTACTS (ID INTEGER PRIMARY KEY AUTOINCREMENT, NAME TEXT, ADDRESS TEXT, PHONE TEXT)"
-                if !(userDB.executeStatements(sql_stmt)) {
-                    print("Error: \(userDB.lastErrorMessage())")
-                }
-                userDB.close()
-            } else {
-                print("Error: \(userDB.lastErrorMessage())")
-            }
-            print("Completed Suckyly")
         }
+        
         */
-        
-        
-        
     }
     
     override func didReceiveMemoryWarning() {
