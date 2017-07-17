@@ -11,40 +11,24 @@ import UIKit
 class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     //MARK: Properties
-    let dataStore = IceCreamStore()
+    var dataStore = IceCreamStore()
+    var myPostRequest = PostRequest()
     @IBOutlet weak var TVFriendsOutlet: UITableView!
-    
-    let myCell = "mycell"
+    let myCell = "reuseme"
+    //let mypostRequest = PostRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
         
         // Setup delegate / datasource
         TVFriendsOutlet.delegate = self
         TVFriendsOutlet.dataSource = self
         
-        var request = URLRequest(url: URL(string: "http://ll.bunnyhutt.com/friendsdummy.php")!)
-        request.httpMethod = "POST"
-        let postString = "id=13&name=Jack"
-        request.httpBody = postString.data(using: .utf8)
-        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                print("error=\(error)")
-                return
-            }
-            
-            if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                print("response = \(response)")
-            }
-            
-            let responseString = String(data: data, encoding: .utf8)
-            print("responseString = \(responseString)")
-        }
-        task.resume()
+        myPostRequest.postRequest(VCFriends: self)
         
+        // Setup the auto sizing of the cells
+        TVFriendsOutlet.rowHeight = UITableViewAutomaticDimension
+        TVFriendsOutlet.estimatedRowHeight = 140
         
     }
 
@@ -60,19 +44,20 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(tableView:UITableView!, numberOfRowsInSection section:Int) -> Int
     {
-        return dataStore.allFlavors().count
+        return dataStore.getPeople().count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath as IndexPath)
-        cell.textLabel?.text=dataStore.allFlavors()[indexPath.row]
-        print("found a cell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: myCell, for: indexPath) as! FriendsCustomCell
+
+        //cell.leftlabel?.text = "Picture Here"
+        cell.rightlabel?.text = dataStore.getPeople()[indexPath.row]
         return cell
+        
     }
-    
-    
-    
+
     
     func numberOfSections(in tableView: UITableView) -> Int{
         return 1
@@ -80,18 +65,29 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ TVFriendsOutlet: UITableView,
                    numberOfRowsInSection: Int) -> Int {
-        return dataStore.allFlavors().count
+        return dataStore.getPeople().count
     }
+    
+    func updateTableView(myNewDataSet: [String]){
+        self.dataStore.changeData(myArray: myNewDataSet)
+        DispatchQueue.main.async { [unowned self] in
+            self.TVFriendsOutlet.reloadData()
+        }
+    }
+    
+    func getDataStore() -> IceCreamStore{
+        return self.dataStore
+    }
+    
+    func notify( sendIt: inout [String]){
+        print("Result",sendIt)
+
+        updateTableView(myNewDataSet :sendIt)
+    }
+
+
   
 }
 
-class IceCreamStore
-{
-    private let flavors = ["Vanilla", "Chocolate", "Strawberry", "Coffee", "Cookies & Cream", "Rum Raisins", "Mint Chocolate Chip", "Peanut Butter Cup"]
-    
-    func allFlavors() -> [String]
-    {
-        return flavors
-    }
-}
+
 

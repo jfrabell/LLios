@@ -1,23 +1,26 @@
 //
-//  Friends.swift
+//  VCRegister.swift
 //  localLandings
 //
-//  Created by Jeff Frabell on 2/7/17.
+//  Created by Jeff on 7/17/17.
 //  Copyright © 2017 POR. All rights reserved.
 //
 
+import Foundation
+
 import UIKit
 
-class VCCheckIn: UIViewController {
+class VCRegister: UIViewController {
     
-    var databasePath = String()
-
+    @IBOutlet weak var password: UITextField!
+    @IBOutlet weak var username: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-          }
+        print("Register")
+    }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -34,5 +37,6 @@ class VCCheckIn: UIViewController {
      // Pass the selected object to the new view controller.
      }
      */
+
     
 }

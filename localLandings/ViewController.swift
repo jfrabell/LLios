@@ -28,11 +28,12 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         // Do any additional setup after loading the view, typically from a nib.
         
         // Handle the text field’s user input through delegate callbacks.
+        print("In Viewcontroller.swift")
         nameTextField.delegate = self
         
         locationManager = CLLocationManager()
         initializeLocationManager(locationManager: locationManager)
-        
+                
     }
     
     //MARK: UITextFieldDelegate
@@ -49,7 +50,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
     
     //MARK: Actions
     @IBAction func setDefaultLabelText(_ sender: UIButton) {
-        mealNameLabel.text = "FUCK YEAH"
+        mealNameLabel.text = "I meant yay"
     }
     
     //Start the location manager
@@ -83,5 +84,6 @@ class ViewController: UIViewController, UITextFieldDelegate, MKMapViewDelegate, 
         self.mapView.userTrackingMode = .follow
         
     }
+    
     
 }
