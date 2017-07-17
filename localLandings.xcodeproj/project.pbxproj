@@ -24,6 +24,7 @@
 		1F81C69A1F0DB5860077BC0C /* userDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81C6991F0DB5860077BC0C /* userDB.swift */; };
 		1F89E59B1F0D2F2E00939E5C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F89E59A1F0D2F2E00939E5C /* User.swift */; };
 		1F89E59E1F0D32B000939E5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89E59D1F0D32B000939E5C /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
+		1F94C3C31F1CEBEA00039060 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94C3C21F1CEBEA00039060 /* VCRegister.swift */; };
 		1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E991E4B6EFD0018C06F /* VCChat.swift */; };
 		1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */; };
 		1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */; };
@@ -63,6 +64,7 @@
 		1F81C6991F0DB5860077BC0C /* userDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = userDB.swift; path = ../userDB.swift; sourceTree = "<group>"; };
 		1F89E59A1F0D2F2E00939E5C /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1F89E59D1F0D32B000939E5C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		1F94C3C21F1CEBEA00039060 /* VCRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
 		1FE36E991E4B6EFD0018C06F /* VCChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCChat.swift; sourceTree = "<group>"; };
 		1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCheckIn.swift; sourceTree = "<group>"; };
 		1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCDeals.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				1F3047241F18096A0093F847 /* VCInstall.swift */,
 				1F071D831EF0963F000AA587 /* VCLogin.swift */,
 				1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */,
+				1F94C3C21F1CEBEA00039060 /* VCRegister.swift */,
 			);
 			path = localLandings;
 			sourceTree = "<group>";
@@ -253,6 +256,7 @@
 				1F81C6941F0D85200077BC0C /* FMDatabaseAdditions.m in Sources */,
 				1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */,
 				1F81C6921F0D85200077BC0C /* FMResultSet.m in Sources */,
+				1F94C3C31F1CEBEA00039060 /* VCRegister.swift in Sources */,
 				1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */,
 				1F89E59B1F0D2F2E00939E5C /* User.swift in Sources */,
 				1F071D841EF0963F000AA587 /* VCLogin.swift in Sources */,
