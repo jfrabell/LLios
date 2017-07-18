@@ -185,10 +185,22 @@ class userDB: NSObject {
         }
         return true;
     }
-
-
-
     
+    func testDb() -> Bool{
+        var returner = false
+        if openDatabase(){
+            let query:String = "SELECT * FROM " + table_AIRPORTS
+            if !database.executeStatements(query) {
+                returner = true
+            }
+            else{                      //query failed
+                returner = false
+            } //end else
+        } //end open database
+        else {
+            returner = false           //database didn't open
+        }
+        return returner
+    } // end func
     
-    
-}
+    }
