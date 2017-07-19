@@ -61,7 +61,7 @@ class userDB: NSObject {
     
     func createAirportTable() -> Bool {
         var created = false
-        
+
         if !FileManager.default.fileExists(atPath: pathToDatabase) {
             database = FMDatabase(path: pathToDatabase!)
             
@@ -111,8 +111,12 @@ class userDB: NSObject {
     func createUserTable() -> Bool {
         var created = false
         
-        if !FileManager.default.fileExists(atPath: pathToDatabase) {
-            database = FMDatabase(path: pathToDatabase!)
+        let documentsDirectory = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString) as String
+        self.pathToDatabase = documentsDirectory.appending("/user.db")
+
+        
+        if FileManager.default.fileExists(atPath: self.pathToDatabase) {
+            database = FMDatabase(path: self.pathToDatabase!)
             
             if database != nil {
                 // Open the database.
@@ -123,20 +127,20 @@ class userDB: NSObject {
                     do {
                         try database.executeUpdate(createMyTableQuery, values: nil)
                         created = true
-                    }
+                    } // end do
                     catch {
                         print("Could not create table.")
                         print(error.localizedDescription)
-                    }
+                    }  // end catch
                     
                     // At the end close the database.
                     database.close()
-                }
+                }  //end open database
                 else {
                     print("Could not open the database.")
-                }
-            }
-        }
+                }  //end couldn't open db
+            } //end database not nil
+        } //end file exists
         
         return created
     }
@@ -186,14 +190,49 @@ class userDB: NSObject {
         return true;
     }
     
+    func isLoggedIn()->Bool{
+        var returner = false
+        if openDatabase() {
+            let query:String = "SELECT * FROM " + table_USER
+            
+            do {
+                let results = try database.executeQuery(query, values: nil)
+                print(results.columnCount)
+                returner = true
+            }
+            catch {
+                print(error.localizedDescription)
+                returner = false
+            }
+            database.close()
+        }
+        return returner;
+    }
+    
+    func logMeOut()->Bool{
+        var returner = false
+        if openDatabase(){
+            let query:String = "DROP TABLE " + table_USER
+            if database.executeStatements(query) {
+                returner = true
+            }
+            else{                      //query failed
+                print ("The test db query failed for some reason")
+                returner = false
+            } //end else
+        } //end open database
+        return returner
+        }
+    
     func testDb() -> Bool{
         var returner = false
         if openDatabase(){
             let query:String = "SELECT * FROM " + table_AIRPORTS
-            if !database.executeStatements(query) {
+            if database.executeStatements(query) {
                 returner = true
             }
             else{                      //query failed
+                print ("The test db query failed for some reason")
                 returner = false
             } //end else
         } //end open database

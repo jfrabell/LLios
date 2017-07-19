@@ -53,67 +53,35 @@ class VCLogin: UIViewController {
             
             //username and password entered.
             
-            queue.async {
-                var returnData = "Start,"
-                var request = URLRequest(url: URL(string: "http://ll.bunnyhutt.com/login.php")!)
-                request.httpMethod = "POST"
-                let postString = "username=jfrabell&password=chicken"
-                request.httpBody = postString.data(using: .utf8)
-                let task = URLSession.shared.dataTask(with: request) { data, response, error in
-                    guard let data = data, error == nil else {                                                 // check for fundamental networking error
-                        print("error=\(String(describing: error))")
-                        returnData += "Bad," + (String(describing: error))
-                        return
-                    }
-                    
-                    if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
-                        print("statusCode should be 200, but is \(httpStatus.statusCode)")
-                        print("response = \(String(describing: response))")
-                        returnData += "Bad," + (String(describing: response))
-                    }
-                    
-                    let responseString = String(data: data, encoding: .utf8)
-                    print("responseString = \(String(describing: responseString))")
-                    returnData += "Good," + (String(describing: responseString))
-                }
-                
-                task.resume()
-            }
-            
             var returnData = "Start,"
             var request = URLRequest(url: URL(string: "http://ll.bunnyhutt.com/login.php")!)
             request.httpMethod = "POST"
-            let postString = "username=jfrabell&password=chicken"
+            
+            let userNameSubmitted = userName.text
+            let passwordSubmitted = passWord.text
+            let postString = "username=" + userNameSubmitted! + "&password=" + passwordSubmitted!
             request.httpBody = postString.data(using: .utf8)
             let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 guard let data = data, error == nil else {                                                 // check for fundamental networking error
                     print("error=\(String(describing: error))")
                     returnData += "Bad," + (String(describing: error))
-                    self.commComplete(returnData: returnData)
+                    self.processLogin(returnData: returnData)
                     return
                 }
                 
                 if let httpStatus = response as? HTTPURLResponse, httpStatus.statusCode != 200 {           // check for http errors
                     print("statusCode should be 200, but is \(httpStatus.statusCode)")
                     returnData += "Bad," + (String(describing: response))
-                    self.commComplete(returnData: returnData)
+                    self.processLogin(returnData: returnData)
                 }
                 
                 let responseString = String(data: data, encoding: .utf8)
                 returnData += "Good," + (String(describing: responseString))
-                self.commComplete(returnData: returnData)
+                self.processLogin(returnData: returnData)
             }
             
             task.resume()
-                        
-            
-            
-            
-            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "MainScreen")
-            self.show(vc as! UIViewController, sender: vc)
         }
-        
-
     }
     
     @IBAction func register(_ sender: UIButton) {
@@ -121,20 +89,64 @@ class VCLogin: UIViewController {
         self.show(vc as! UIViewController, sender: vc)
     }
     
-    func commComplete(returnData: String){
-        print("We're Here")
-        print(returnData)
+    func processLogin(returnData: String){
+
+        var successOutput = "Something went horribly wrong"
+        let returnDataArray = returnData.components(separatedBy: ",")
+        let successArray = returnDataArray[2].components(separatedBy: ":")
         
+        if(returnDataArray.count == 3){
+            successOutput = "Invalid username or password"
+        }
+        else
+        {
+            //test needed because returnDataArray is different length depending on username entered
+            let successReasonArray = returnDataArray[3].components(separatedBy: ",")
+            let successReason = successReasonArray[0].components(separatedBy: "\\")
+            //gets the reason for the failure or the name for success
+            //returnDataArray 1 is good or bad, 2 is success or failure of login, 3 should be reason or name
+            successOutput = successReason[3].replacingOccurrences(of: "\"", with: "")
+            //reason for success or failure of login (excluding network errors)
+        }
+        
+        
+        if(returnDataArray[1] == "Good"){
+            print("Network Success")
+            print(returnDataArray[1])  //good or bad for network
+        }
+        else{
+            DispatchQueue.main.async(execute: {
+            let alert = UIAlertController(title: "Network Error", message: "Please verify access to the internet", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+            })
+        }
+        
+        if(successArray[1].contains("false")){
+            DispatchQueue.main.async(execute: {
+
+            let alert = UIAlertController(title: "Login Error", message: successOutput, preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
+                })
+        }
+        else{
+            DispatchQueue.main.async(execute: {
+                if(!userDB.shared.isLoggedIn()){
+            if userDB.shared.createUserTable() {
+                print("Created user table")
+                if userDB.shared.insertUser(username: self.userName.text!, location: "No checkins yet", location_time: "0", privacy: "0") {
+                    print("Inserted username")
+                }
+                    }
+                }
+                else{
+                    print("Already logged in")
+                }
+            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "MainScreen")
+            self.show(vc as! UIViewController, sender: vc)
+                })
     }
- 
-    /*
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
-     }
-     */
     
+}
 }

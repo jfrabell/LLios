@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1F071D841EF0963F000AA587 /* VCLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F071D831EF0963F000AA587 /* VCLogin.swift */; };
+		1F1AF79F1F1FADF100BD4650 /* VCLogout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1AF79E1F1FADF100BD4650 /* VCLogout.swift */; };
+		1F1AF7A11F1FB1FD00BD4650 /* aaTODO in Resources */ = {isa = PBXBuildFile; fileRef = 1F1AF7A01F1FB1FD00BD4650 /* aaTODO */; };
 		1F1D124E1E4A3CBA00077A73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */; };
 		1F1D12501E4A3CBA00077A73 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F1D124F1E4A3CBA00077A73 /* ViewController.swift */; };
 		1F1D12531E4A3CBA00077A73 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F1D12511E4A3CBA00077A73 /* Main.storyboard */; };
@@ -40,6 +42,8 @@
 
 /* Begin PBXFileReference section */
 		1F071D831EF0963F000AA587 /* VCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
+		1F1AF79E1F1FADF100BD4650 /* VCLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogout.swift; sourceTree = "<group>"; };
+		1F1AF7A01F1FB1FD00BD4650 /* aaTODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aaTODO; sourceTree = "<group>"; };
 		1F1D124A1E4A3CBA00077A73 /* localLandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = localLandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1D124F1E4A3CBA00077A73 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -111,6 +115,7 @@
 		1F1D124C1E4A3CBA00077A73 /* localLandings */ = {
 			isa = PBXGroup;
 			children = (
+				1F1AF7A01F1FB1FD00BD4650 /* aaTODO */,
 				1F3047261F1815E40093F847 /* ap.tsv */,
 				1F81C6991F0DB5860077BC0C /* userDB.swift */,
 				1F1D12511E4A3CBA00077A73 /* Main.storyboard */,
@@ -126,6 +131,7 @@
 				1F89E59A1F0D2F2E00939E5C /* User.swift */,
 				1F89E59F1F0D349400939E5C /* db */,
 				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
+				1F1AF79E1F1FADF100BD4650 /* VCLogout.swift */,
 				1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */,
 				1F3047241F18096A0093F847 /* VCInstall.swift */,
 				1F071D831EF0963F000AA587 /* VCLogin.swift */,
@@ -235,6 +241,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F1AF7A11F1FB1FD00BD4650 /* aaTODO in Resources */,
 				1F3047271F1815E40093F847 /* ap.tsv in Resources */,
 				1F81C6961F0D85200077BC0C /* Info.plist in Resources */,
 				1F1D12581E4A3CBA00077A73 /* LaunchScreen.storyboard in Resources */,
@@ -270,6 +277,7 @@
 				1FE36EA11E4B6EFD0018C06F /* VCFriends.swift in Sources */,
 				1F81C69A1F0DB5860077BC0C /* userDB.swift in Sources */,
 				1F81C6931F0D85200077BC0C /* FMDatabaseQueue.m in Sources */,
+				1F1AF79F1F1FADF100BD4650 /* VCLogout.swift in Sources */,
 				1F1D124E1E4A3CBA00077A73 /* AppDelegate.swift in Sources */,
 				1F3047251F18096A0093F847 /* VCInstall.swift in Sources */,
 				1FE36EA91E4CA0D60018C06F /* UtilityClass.swift in Sources */,

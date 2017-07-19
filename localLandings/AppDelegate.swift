@@ -21,21 +21,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Add code here (e.g. if/else) to determine which view controller class (chooseViewControllerA or chooseViewControllerB) and storyboard ID (chooseStoryboardA or chooseStoryboardB) to send the user to
         
-        if(userDB.shared.testDb()){
+        if(userDB.shared.testDb() && userDB.shared.isLoggedIn()){
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainScreen") as! ViewController
             self.window?.rootViewController = initialViewController
-        
-            self.window?.makeKeyAndVisible()
         }
-        else{
+        else if(userDB.shared.testDb())
+        {
+            let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
+            let initialViewController: VCLogin = mainStoryboard.instantiateViewController(withIdentifier: "login") as! VCLogin
+            self.window?.rootViewController = initialViewController
+        }
+        
+        else
+        {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController: VCInstall = mainStoryboard.instantiateViewController(withIdentifier: "iNstall") as! VCInstall
             self.window?.rootViewController = initialViewController
-            
-            self.window?.makeKeyAndVisible()
-
         }
+            self.window?.makeKeyAndVisible()
             return true
     }
     

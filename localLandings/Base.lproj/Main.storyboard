@@ -236,10 +236,10 @@
             </objects>
             <point key="canvasLocation" x="1103" y="-869"/>
         </scene>
-        <!--Chat-->
+        <!--Logout-->
         <scene sceneID="QR8-Kb-K0A">
             <objects>
-                <viewController id="8Zo-4a-klM" customClass="VCChat" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="8Zo-4a-klM" customClass="VCLogout" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AeY-et-9UV"/>
                         <viewControllerLayoutGuide type="bottom" id="ocv-nC-8CG"/>
@@ -253,7 +253,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button" image="logout"/>
                                 <connections>
-                                    <segue destination="BYZ-38-t0r" kind="show" id="RzR-ib-yxn"/>
+                                    <action selector="lougoutClick:" destination="8Zo-4a-klM" eventType="touchUpInside" id="TLi-hg-THU"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -423,7 +423,7 @@
         <!--Login-->
         <scene sceneID="uxT-9U-mB2">
             <objects>
-                <viewController storyboardIdentifier="login" title="Login" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ink-Ef-3pS" customClass="VCLogin" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="login" storyboardIdentifier="login" title="Login" id="ink-Ef-3pS" customClass="VCLogin" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3PU-yg-bnz"/>
                         <viewControllerLayoutGuide type="bottom" id="F4O-2R-Ykd"/>
@@ -617,6 +617,6 @@
         <image name="person" width="507" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="79a-y1-dGS"/>
+        <segue reference="aeI-lv-GsY"/>
     </inferredMetricsTieBreakers>
 </document>
