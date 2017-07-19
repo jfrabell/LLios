@@ -29,7 +29,7 @@ class VCLogout: UIViewController {
     }
     
     func goToLogin(){
-        if userDB.shared.logMeOut(){
+        if utilityUserDB.shared.logMeOut(){
             print("Logged out")
         }
         else{

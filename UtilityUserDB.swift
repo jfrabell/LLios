@@ -8,9 +8,9 @@
 
 import UIKit
 
-class userDB: NSObject {
+class utilityUserDB: NSObject {
 
-    static let shared: userDB = userDB()
+    static let shared: utilityUserDB = utilityUserDB()
     
     let databaseFileName = "user.db"
     var pathToDatabase: String!
@@ -28,8 +28,7 @@ class userDB: NSObject {
     
     
     let table_USER = "USER"
-    
-    let field_USERNAME = "USERNAME"
+          let field_USERNAME = "USERNAME"
     let field_LOCATION = "LOCATION"
     let field_LOCATION_TIME = "LOCATION_TIME"
     let field_PRIVACY = "PRIVACY"

@@ -38,7 +38,7 @@ class VCInstall: UIViewController {
 
         
         DispatchQueue.global(qos: .utility).async {
-            if(userDB.shared.createAirportTable()){
+            if(utilityUserDB.shared.createAirportTable()){
             for i in 0 ..< numberOfRows {
                 
                 // do something time consuming here
@@ -51,7 +51,7 @@ class VCInstall: UIViewController {
                     let lon = csvRows[i][4]
                     
                     //this is working, now put it in a database.
-                    if(userDB.shared.insertAirport(name: name, three: three, four: four, lat: lat, lon: lon)){
+                    if(utilityUserDB.shared.insertAirport(name: name, three: three, four: four, lat: lat, lon: lon)){
                         print("Inserting " + name)
                     } //end if insert user
 
@@ -101,8 +101,6 @@ class VCInstall: UIViewController {
         var cleanFile = file
         cleanFile = cleanFile.replacingOccurrences(of: "\r", with: "\n")
         cleanFile = cleanFile.replacingOccurrences(of: "\n\n", with: "\n")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";;", with: "")
-        //        cleanFile = cleanFile.replacingOccurrences(of: ";\n", with: "")
         return cleanFile
     }
     

@@ -132,10 +132,10 @@ class VCLogin: UIViewController {
         }
         else{
             DispatchQueue.main.async(execute: {
-                if(!userDB.shared.isLoggedIn()){
-            if userDB.shared.createUserTable() {
+                if(!utilityUserDB.shared.isLoggedIn()){
+            if utilityUserDB.shared.createUserTable() {
                 print("Created user table")
-                if userDB.shared.insertUser(username: self.userName.text!, location: "No checkins yet", location_time: "0", privacy: "0") {
+                if utilityUserDB.shared.insertUser(username: self.userName.text!, location: "No checkins yet", location_time: "0", privacy: "0") {
                     print("Inserted username")
                 }
                     }

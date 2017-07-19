@@ -251,7 +251,7 @@
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="37i-hX-REL">
                                 <rect key="frame" x="11" y="188" width="354" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button" image="logout"/>
+                                <state key="normal" title="Button" image="chat"/>
                                 <connections>
                                     <action selector="lougoutClick:" destination="8Zo-4a-klM" eventType="touchUpInside" id="TLi-hg-THU"/>
                                 </connections>
@@ -267,7 +267,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="MainScreen" storyboardIdentifier="MainScreen" title="Main" id="BYZ-38-t0r" customClass="ViewController" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="MainScreen" storyboardIdentifier="MainScreen" title="Main" id="BYZ-38-t0r" customClass="VCMainScreen" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -348,7 +348,7 @@
                                                     <constraint firstAttribute="height" constant="60" id="OCt-2r-1LS"/>
                                                     <constraint firstAttribute="width" constant="60" id="ruQ-FO-YeZ"/>
                                                 </constraints>
-                                                <state key="normal" title="Button" image="logout"/>
+                                                <state key="normal" title="Button" image="chat"/>
                                                 <connections>
                                                     <segue destination="8Zo-4a-klM" kind="show" id="Lml-gm-vJ4"/>
                                                 </connections>
@@ -363,32 +363,11 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" translatesAutoresizingMaskIntoConstraints="NO" id="Cj8-MD-CDh">
                                         <rect key="frame" x="0.0" y="60" width="353" height="557"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n7h-cS-SmN">
-                                                <rect key="frame" x="0.0" y="0.0" width="86.5" height="0.0"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <nil key="textColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Meal Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="p75-XM-Dyz">
-                                                <rect key="frame" x="0.0" y="0.0" width="353" height="15"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybI-RK-x3I">
-                                                <rect key="frame" x="0.0" y="15" width="151" height="0.0"/>
-                                                <state key="normal" title="Set Default Label Text"/>
-                                                <connections>
-                                                    <action selector="setDefaultLabelText:" destination="BYZ-38-t0r" eventType="touchUpInside" id="9Gt-13-UlT"/>
-                                                </connections>
-                                            </button>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOc-aR-sc6">
-                                                <rect key="frame" x="0.0" y="15" width="353" height="542"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="353" height="557"/>
                                             </mapView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="p75-XM-Dyz" secondAttribute="trailing" id="0Gf-kp-erZ"/>
-                                            <constraint firstItem="ybI-RK-x3I" firstAttribute="top" secondItem="n7h-cS-SmN" secondAttribute="bottom" constant="15" id="diG-fm-rXz"/>
                                             <constraint firstAttribute="trailing" secondItem="ZOc-aR-sc6" secondAttribute="trailing" id="fTm-cb-EQy"/>
                                         </constraints>
                                     </stackView>
@@ -410,10 +389,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="MealNameLabel" destination="n7h-cS-SmN" id="0WO-ic-vfH"/>
                         <outlet property="mapView" destination="ZOc-aR-sc6" id="Xdk-z7-MjF"/>
-                        <outlet property="mealNameLabel" destination="n7h-cS-SmN" id="n40-2W-kKd"/>
-                        <outlet property="nameTextField" destination="p75-XM-Dyz" id="5HJ-wO-SP3"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -609,14 +585,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="chat" width="240" height="240"/>
         <image name="checkin" width="300" height="300"/>
         <image name="deals" width="300" height="300"/>
         <image name="friends" width="300" height="300"/>
         <image name="home" width="300" height="300"/>
-        <image name="logout" width="300" height="300"/>
         <image name="person" width="507" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aeI-lv-GsY"/>
+        <segue reference="Oxf-Sc-3X8"/>
     </inferredMetricsTieBreakers>
 </document>

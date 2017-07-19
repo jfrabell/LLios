@@ -21,12 +21,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Add code here (e.g. if/else) to determine which view controller class (chooseViewControllerA or chooseViewControllerB) and storyboard ID (chooseStoryboardA or chooseStoryboardB) to send the user to
         
-        if(userDB.shared.testDb() && userDB.shared.isLoggedIn()){
+        if(utilityUserDB.shared.testDb() && utilityUserDB.shared.isLoggedIn()){
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController: ViewController = mainStoryboard.instantiateViewController(withIdentifier: "MainScreen") as! ViewController
+            let initialViewController: VCMainScreen = mainStoryboard.instantiateViewController(withIdentifier: "MainScreen") as! VCMainScreen
             self.window?.rootViewController = initialViewController
         }
-        else if(userDB.shared.testDb())
+        else if(utilityUserDB.shared.testDb())
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let initialViewController: VCLogin = mainStoryboard.instantiateViewController(withIdentifier: "login") as! VCLogin
