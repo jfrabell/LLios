@@ -13,7 +13,7 @@
         <!--Home-->
         <scene sceneID="zLY-H4-ZPH">
             <objects>
-                <viewController title="Home" id="Cgb-k1-2nH" customClass="VCHome" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="homeScene" storyboardIdentifier="homeScene" title="Home" id="Cgb-k1-2nH" customClass="VCHome" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="hK7-lr-eGy"/>
                         <viewControllerLayoutGuide type="bottom" id="jd5-hc-Vf1"/>
@@ -41,7 +41,7 @@
         <!--Check In-->
         <scene sceneID="P5o-oV-p0D">
             <objects>
-                <viewController id="PcD-2S-prI" customClass="VCCheckIn" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="checkinScene" storyboardIdentifier="checkinScene" id="PcD-2S-prI" customClass="VCCheckIn" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="XKP-QI-Ng7"/>
                         <viewControllerLayoutGuide type="bottom" id="Mfc-DQ-kZ6"/>
@@ -69,7 +69,7 @@
         <!--Add Friends-->
         <scene sceneID="SMB-9h-FuU">
             <objects>
-                <viewController title="Add Friends" id="dbz-It-pC2" sceneMemberID="viewController">
+                <viewController restorationIdentifier="addFriendsScene" storyboardIdentifier="addFriendsScene" title="Add Friends" id="dbz-It-pC2" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xhl-n9-ane"/>
                         <viewControllerLayoutGuide type="bottom" id="BAw-lC-wAp"/>
@@ -96,7 +96,7 @@
         <!--Delete Friends-->
         <scene sceneID="V4c-pY-DAI">
             <objects>
-                <viewController title="Delete Friends" id="Ej1-rb-tXz" sceneMemberID="viewController">
+                <viewController restorationIdentifier="deleteFriends" storyboardIdentifier="deleteFriendsScene" title="Delete Friends" id="Ej1-rb-tXz" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="SOK-BV-VBc"/>
                         <viewControllerLayoutGuide type="bottom" id="ej5-Sr-B3A"/>
@@ -123,7 +123,7 @@
         <!--Friends-->
         <scene sceneID="nxg-l4-U8v">
             <objects>
-                <viewController id="eAE-GZ-2la" customClass="VCFriends" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="friendsScene" id="eAE-GZ-2la" customClass="VCFriends" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="kHV-2Q-JbH"/>
                         <viewControllerLayoutGuide type="bottom" id="9ze-3p-LCy"/>
@@ -150,7 +150,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5kA-jn-peA" id="y3U-3C-qQ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-Ql-TX1">
@@ -211,7 +211,7 @@
         <!--Deals-->
         <scene sceneID="btP-Tr-oJo">
             <objects>
-                <viewController id="gL0-HJ-jMe" customClass="VCDeals" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="dealsScene" id="gL0-HJ-jMe" customClass="VCDeals" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="n9U-8T-6LD"/>
                         <viewControllerLayoutGuide type="bottom" id="Mtq-dw-Cai"/>
@@ -239,7 +239,7 @@
         <!--Logout-->
         <scene sceneID="QR8-Kb-K0A">
             <objects>
-                <viewController id="8Zo-4a-klM" customClass="VCLogout" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="logoutScene" storyboardIdentifier="logoutScene" id="8Zo-4a-klM" customClass="VCLogout" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="AeY-et-9UV"/>
                         <viewControllerLayoutGuide type="bottom" id="ocv-nC-8CG"/>
@@ -267,7 +267,7 @@
         <!--Main-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController restorationIdentifier="MainScreen" storyboardIdentifier="MainScreen" title="Main" id="BYZ-38-t0r" customClass="VCMainScreen" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="mainScreen" storyboardIdentifier="mainScene" title="Main" id="BYZ-38-t0r" customClass="VCMainScreen" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -399,7 +399,7 @@
         <!--Login-->
         <scene sceneID="uxT-9U-mB2">
             <objects>
-                <viewController restorationIdentifier="login" storyboardIdentifier="login" title="Login" id="ink-Ef-3pS" customClass="VCLogin" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="login" storyboardIdentifier="loginScene" title="Login" id="ink-Ef-3pS" customClass="VCLogin" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3PU-yg-bnz"/>
                         <viewControllerLayoutGuide type="bottom" id="F4O-2R-Ykd"/>
@@ -408,49 +408,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="dlz-PM-Hpt">
-                                <rect key="frame" x="16" y="273" width="343" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qFD-ed-ao6">
+                                <rect key="frame" x="26" y="273.5" width="323" height="120"/>
                                 <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="qFD-ed-ao6">
-                                        <rect key="frame" x="0.0" y="0.0" width="343" height="120"/>
-                                        <subviews>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-5b-aiy" customClass="TFUsername">
-                                                <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                            </textField>
-                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-V3-8b6" customClass="TFPassword">
-                                                <rect key="frame" x="0.0" y="30" width="343" height="30"/>
-                                                <nil key="textColor"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                            </textField>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-0q-lLY">
-                                                <rect key="frame" x="0.0" y="60" width="343" height="30"/>
-                                                <state key="normal" title="Log In"/>
-                                                <connections>
-                                                    <action selector="click:" destination="ink-Ef-3pS" eventType="touchUpInside" id="Rpu-XF-WmK"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOp-QN-D8b">
-                                                <rect key="frame" x="0.0" y="90" width="343" height="30"/>
-                                                <state key="normal" title="Register"/>
-                                                <connections>
-                                                    <action selector="register:" destination="ink-Ef-3pS" eventType="touchUpInside" id="pyQ-T2-HU5"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-5b-aiy" customClass="TFUsername">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UaD-V3-8b6" customClass="TFPassword">
+                                        <rect key="frame" x="0.0" y="30" width="323" height="30"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCV-0q-lLY">
+                                        <rect key="frame" x="0.0" y="60" width="323" height="30"/>
+                                        <state key="normal" title="Log In"/>
+                                        <connections>
+                                            <action selector="click:" destination="ink-Ef-3pS" eventType="touchUpInside" id="Rpu-XF-WmK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VOp-QN-D8b">
+                                        <rect key="frame" x="0.0" y="90" width="323" height="30"/>
+                                        <state key="normal" title="Register"/>
+                                        <connections>
+                                            <action selector="register:" destination="ink-Ef-3pS" eventType="touchUpInside" id="pyQ-T2-HU5"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="dlz-PM-Hpt" firstAttribute="top" secondItem="3PU-yg-bnz" secondAttribute="bottom" constant="253" id="C8a-gM-cDp"/>
-                            <constraint firstItem="F4O-2R-Ykd" firstAttribute="top" secondItem="dlz-PM-Hpt" secondAttribute="bottom" constant="274" id="Gnj-y2-fE3"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="dlz-PM-Hpt" secondAttribute="trailing" id="Qca-YD-BWl"/>
-                            <constraint firstItem="dlz-PM-Hpt" firstAttribute="leading" secondItem="Kb1-kH-5Ql" secondAttribute="leadingMargin" id="epo-oi-kmc"/>
+                            <constraint firstItem="qFD-ed-ao6" firstAttribute="centerX" secondItem="Kb1-kH-5Ql" secondAttribute="centerX" id="BeF-gp-IyW"/>
+                            <constraint firstItem="qFD-ed-ao6" firstAttribute="leading" secondItem="Kb1-kH-5Ql" secondAttribute="leadingMargin" constant="10" id="V2F-E5-qyO"/>
+                            <constraint firstItem="qFD-ed-ao6" firstAttribute="centerY" secondItem="Kb1-kH-5Ql" secondAttribute="centerY" id="man-yj-DGc"/>
                         </constraints>
                     </view>
                     <connections>
@@ -465,7 +459,7 @@
         <!--Register-->
         <scene sceneID="ytS-FJ-Sq6">
             <objects>
-                <viewController storyboardIdentifier="register" id="Pqv-Ty-hy3" customClass="VCRegister" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="registerScene" id="Pqv-Ty-hy3" customClass="VCRegister" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="3WP-Ro-qPs"/>
                         <viewControllerLayoutGuide type="bottom" id="WPo-z8-jiQ"/>
@@ -517,7 +511,7 @@
         <!--Install-->
         <scene sceneID="nEL-nM-n7o">
             <objects>
-                <viewController restorationIdentifier="iNstall" storyboardIdentifier="iNstall" id="Hp9-kO-mpX" customClass="VCInstall" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="iNstall" storyboardIdentifier="installScene" id="Hp9-kO-mpX" customClass="VCInstall" customModule="localLandings" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S6O-mE-IkT"/>
                         <viewControllerLayoutGuide type="bottom" id="jBB-zm-kUb"/>
@@ -559,7 +553,7 @@
         <!--View Controller-->
         <scene sceneID="ckd-co-8j5">
             <objects>
-                <viewController id="Tp2-DR-Tu3" sceneMemberID="viewController">
+                <viewController restorationIdentifier="profileScene" storyboardIdentifier="profileScene" id="Tp2-DR-Tu3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="d51-fX-1KC"/>
                         <viewControllerLayoutGuide type="bottom" id="QrF-K4-SFx"/>

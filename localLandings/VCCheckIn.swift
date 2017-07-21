@@ -17,6 +17,9 @@ class VCCheckIn: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        let fish = utilityUserDB.shared.getAirportsWithinTen(lat: "40.0000", lon: "-83.0000")
+        print(fish)
           }
     
     override func didReceiveMemoryWarning() {

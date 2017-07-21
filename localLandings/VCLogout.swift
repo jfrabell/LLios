@@ -36,7 +36,7 @@ class VCLogout: UIViewController {
             print ("Unable to log out for some reason")
         }
         DispatchQueue.main.async(execute: {
-            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "login")
+            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "loginScene")
             self.show(vc as! UIViewController, sender: vc)
         })
 

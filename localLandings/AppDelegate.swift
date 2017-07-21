@@ -23,20 +23,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if(utilityUserDB.shared.testDb() && utilityUserDB.shared.isLoggedIn()){
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController: VCMainScreen = mainStoryboard.instantiateViewController(withIdentifier: "MainScreen") as! VCMainScreen
+            let initialViewController: VCMainScreen = mainStoryboard.instantiateViewController(withIdentifier: "mainScene") as! VCMainScreen
             self.window?.rootViewController = initialViewController
         }
         else if(utilityUserDB.shared.testDb())
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController: VCLogin = mainStoryboard.instantiateViewController(withIdentifier: "login") as! VCLogin
+            let initialViewController: VCLogin = mainStoryboard.instantiateViewController(withIdentifier: "loginScene") as! VCLogin
             self.window?.rootViewController = initialViewController
         }
         
         else
         {
             let mainStoryboard: UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let initialViewController: VCInstall = mainStoryboard.instantiateViewController(withIdentifier: "iNstall") as! VCInstall
+            let initialViewController: VCInstall = mainStoryboard.instantiateViewController(withIdentifier: "installScene") as! VCInstall
             self.window?.rootViewController = initialViewController
         }
             self.window?.makeKeyAndVisible()

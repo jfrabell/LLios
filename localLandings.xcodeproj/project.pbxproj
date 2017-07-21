@@ -34,7 +34,6 @@
 		1FE36EAB1E4CAF840018C06F /* IceCreamStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAA1E4CAF840018C06F /* IceCreamStore.swift */; };
 		1FE36EAD1E4CAFF40018C06F /* FriendsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAC1E4CAFF40018C06F /* FriendsCustomCell.swift */; };
 		1FE36EAF1E4CB0D20018C06F /* PostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EAE1E4CB0D20018C06F /* PostRequest.swift */; };
-		1FE36EB11E4CDED00018C06F /* UtilityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,7 +73,6 @@
 		1FE36EAA1E4CAF840018C06F /* IceCreamStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IceCreamStore.swift; sourceTree = "<group>"; };
 		1FE36EAC1E4CAFF40018C06F /* FriendsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsCustomCell.swift; sourceTree = "<group>"; };
 		1FE36EAE1E4CB0D20018C06F /* PostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostRequest.swift; sourceTree = "<group>"; };
-		1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UtilityViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,7 +126,6 @@
 				1F94C3C21F1CEBEA00039060 /* VCRegister.swift */,
 				1FE36EA81E4CA0D60018C06F /* UtilityClass.swift */,
 				1F81C6991F0DB5860077BC0C /* UtilityUserDB.swift */,
-				1FE36EB01E4CDED00018C06F /* UtilityViewController.swift */,
 			);
 			path = localLandings;
 			sourceTree = "<group>";
@@ -248,7 +245,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				1FE36EAD1E4CAFF40018C06F /* FriendsCustomCell.swift in Sources */,
-				1FE36EB11E4CDED00018C06F /* UtilityViewController.swift in Sources */,
 				1F81C6951F0D85200077BC0C /* FMDatabasePool.m in Sources */,
 				1FE36EAF1E4CB0D20018C06F /* PostRequest.swift in Sources */,
 				1F81C6911F0D85200077BC0C /* FMDatabase.m in Sources */,

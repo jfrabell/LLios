@@ -143,7 +143,7 @@ class VCLogin: UIViewController {
                 else{
                     print("Already logged in")
                 }
-            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "MainScreen")
+            let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "mainScene")
             self.show(vc as! UIViewController, sender: vc)
                 })
     }

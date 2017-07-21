@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class utilityUserDB: NSObject {
 
@@ -241,4 +242,60 @@ class utilityUserDB: NSObject {
         return returner
     } // end func
     
-    }
+    func getAirportsWithinTen(lat: String, lon: String)->[String]{
+        
+        //takes a strign lat lon and returns the ten nearest airports as an array of strings..
+        //format distance|four digit code|name
+        
+        var distanceNameArray = ["9238.51|Ohio", "9382.51|Toledo", "500.32|Rickenbacker"]
+        distanceNameArray.removeAll()
+        
+        let latMin = ((lat as NSString).doubleValue)-2
+        let latMax = ((lat as NSString).doubleValue)+2
+        let lonMin = ((lon as NSString).doubleValue)-2
+        let lonMax = ((lon as NSString).doubleValue)+2
+        
+        if openDatabase(){
+            let query:String = "SELECT * FROM \(table_AIRPORTS)"
+                let results:FMResultSet? = database.executeQuery(query, withArgumentsIn: [])
+                
+                while results?.next() == true {
+//Now looping through all airports...time to find the nearest.
+                    let thisAirportsLatitude = (results?.string(forColumn: (field_LAT)) as! NSString).doubleValue
+                    let thisAirportsLogitude = (results?.string(forColumn: (field_LON)) as! NSString).doubleValue
+                    
+                    if thisAirportsLatitude > latMin && thisAirportsLatitude < latMax {
+                        if thisAirportsLogitude > lonMin && thisAirportsLogitude < lonMax {
+
+                            let myLocation: CLLocation = CLLocation(latitude: (lat as NSString).doubleValue, longitude: (lon as NSString).doubleValue)
+                            let itsLocation: CLLocation = CLLocation(latitude: thisAirportsLatitude, longitude: thisAirportsLogitude)
+                            let distanceBetween = myLocation.distance(from: itsLocation)
+                            
+                            let theString = "\(distanceBetween)|\(String(describing: results?.string(forColumn: (field_FOUR)) as! String))|\(String(describing: results?.string(forColumn: (field_NAME))as! String))"
+                            distanceNameArray.append(theString)
+                            
+                        } // end lat if
+                    }  //end long if
+                }  //end while
+            } //end open database
+        else {
+        print ("Database didn't open in utility class get nearest 10")
+        }
+    
+        
+    //finally remove all elements after 10...
+        var ans = distanceNameArray.sorted {
+            (s1, s2) -> Bool in return s1.localizedStandardCompare(s2) == .orderedAscending
+        }
+        
+        let q = ans.count
+        
+        for i in (11...q).reversed() {
+            let j = i-1
+            ans.remove(at: j)
+        }
+        
+        return ans
+    }//end func
+    
+    }//end class
