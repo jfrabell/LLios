@@ -27,11 +27,21 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        let anHourAgo = Date().timeIntervalSince1970 - (60*60)
+        let lastLocationTime = utilityUserDB.shared.getLastLoginTime()
+        if(lastLocationTime < anHourAgo){
         locationManager = CLLocationManager()
         initializeLocationManager(locationManager: locationManager)
-                
+        }
+        else{
+            print("No Need")
+            updateMapOldData(latitude: "40.03", longitude: "-82.89")
+        }
+        
     }
-    
+
+//only get location if we haven't got one in the last hour...
+
     //Start the location manager
     func initializeLocationManager(locationManager: CLLocationManager){
         locationManager.delegate = self
@@ -50,11 +60,13 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         print("Latitude: \(latitude)")
         print("Longitude: \(longitude)")
         
+        utilityUserDB.shared.setLoginTime()
+        
         updateMap(latitude: latitude, longitude: longitude)
         
         manager.stopUpdatingLocation()
-        UtilityClass.shared.getNearestTenAirports(location: latestLocation!)
     }
+
     
     
     func updateMap(latitude: String, longitude: String){
@@ -62,6 +74,19 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         self.mapView.showsUserLocation = true
         self.mapView.userTrackingMode = .follow
         
+    }
+    
+    func updateMapOldData(latitude: String, longitude: String){
+        
+        let newLat = Double(latitude)
+        let newLon = Double(longitude)
+        let myCoordinate = CLLocation(latitude: newLat!, longitude: newLon!)
+        let regionRadius: CLLocationDistance = 5280
+        
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(myCoordinate.coordinate,
+                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        self.mapView.setRegion(coordinateRegion, animated: true)
+
     }
     
     

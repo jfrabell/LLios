@@ -29,8 +29,9 @@ class utilityUserDB: NSObject {
     
     
     let table_USER = "USER"
-          let field_USERNAME = "USERNAME"
+    let field_USERNAME = "USERNAME"
     let field_LOCATION = "LOCATION"
+    let field_LATLON = "LATLON"
     let field_LOCATION_TIME = "LOCATION_TIME"
     let field_PRIVACY = "PRIVACY"
     
@@ -42,7 +43,7 @@ class utilityUserDB: NSObject {
     }
     
     
-    func openDatabase() -> Bool {
+func openDatabase() -> Bool {
         if database == nil {
             if FileManager.default.fileExists(atPath: pathToDatabase) {
                 database = FMDatabase(path: pathToDatabase)
@@ -59,7 +60,7 @@ class utilityUserDB: NSObject {
     }
 
     
-    func createAirportTable() -> Bool {
+func createAirportTable() -> Bool {
         var created = false
 
         if !FileManager.default.fileExists(atPath: pathToDatabase) {
@@ -93,7 +94,7 @@ class utilityUserDB: NSObject {
     }
     
     
-    func insertAirport(name: String,three: String,four: String,lat: String,lon: String)->Bool {
+func insertAirport(name: String,three: String,four: String,lat: String,lon: String)->Bool {
         if openDatabase() {
             let query:String = "INSERT INTO " + table_AIRPORTS + "(" + field_NAME + "," + field_THREE + "," + field_FOUR + "," + field_LAT + "," + field_LON + ") VALUES ('" + name + "','" + three + "','" + four + "','" + lat + "','" + lon + "')"
          
@@ -108,7 +109,7 @@ class utilityUserDB: NSObject {
     
     
     
-    func createUserTable() -> Bool {
+func createUserTable() -> Bool {
         var created = false
         
         let documentsDirectory = (NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)[0] as NSString) as String
@@ -122,7 +123,7 @@ class utilityUserDB: NSObject {
                 // Open the database.
                 if database.open() {
                     let createMyTableQuery = "CREATE TABLE IF NOT EXISTS " + table_USER + "("+field_ID+" INTEGER PRIMARY KEY AUTOINCREMENT, " + field_USERNAME + " TEXT, " + field_LOCATION +
-                        " TEXT, " + field_LOCATION_TIME + " TEXT, " + field_PRIVACY + " TEXT)"
+                        " TEXT, " + field_LATLON + " TEXT, " + field_LOCATION_TIME + " TEXT, " + field_PRIVACY + " TEXT)"
                     
                     do {
                         try database.executeUpdate(createMyTableQuery, values: nil)
@@ -146,7 +147,7 @@ class utilityUserDB: NSObject {
     }
     
     
-    func insertUser(username: String,location: String,location_time: String,privacy: String)->Bool {
+func insertUser(username: String,location: String,location_time: String,privacy: String)->Bool {
         if openDatabase() {
             let query:String = "INSERT INTO " + table_USER + "(" + field_USERNAME + "," + field_LOCATION + "," + field_LOCATION_TIME + "," + field_PRIVACY + ") VALUES ('" + username + "','" + location + "','" + location_time + "','" + privacy + "')"
             
@@ -159,7 +160,7 @@ class utilityUserDB: NSObject {
         return true;
     }
     
-    func updateUser(username: String,location: String)->Bool {
+func updateUser(username: String,location: String)->Bool {
         if openDatabase() {
             
             let location_time = String(Date().timeIntervalSince1970)
@@ -177,7 +178,7 @@ class utilityUserDB: NSObject {
         return true;
     }
     
-    func updateUser(username: String, privacy: String)->Bool {
+func updateUser(username: String, privacy: String)->Bool {
         if openDatabase() {
             let query:String = "UPDATE " + table_USER + " SET `" + field_PRIVACY + "` = '" + privacy + "' WHERE `" + field_USERNAME + "' = '" + username + "' LIMIT 1"
             
@@ -190,7 +191,7 @@ class utilityUserDB: NSObject {
         return true;
     }
     
-    func isLoggedIn()->Bool{
+func isLoggedIn()->Bool{
         var returner = false
         if openDatabase() {
             let query:String = "SELECT * FROM " + table_USER
@@ -209,7 +210,7 @@ class utilityUserDB: NSObject {
         return returner;
     }
     
-    func logMeOut()->Bool{
+func logMeOut()->Bool{
         var returner = false
         if openDatabase(){
             let query:String = "DROP TABLE " + table_USER
@@ -224,7 +225,7 @@ class utilityUserDB: NSObject {
         return returner
         }
     
-    func testDb() -> Bool{
+func testDb() -> Bool{
         var returner = false
         if openDatabase(){
             let query:String = "SELECT * FROM " + table_AIRPORTS
@@ -242,7 +243,7 @@ class utilityUserDB: NSObject {
         return returner
     } // end func
     
-    func getAirportsWithinTen(lat: String, lon: String)->[String]{
+func getAirportsWithinTen(lat: String, lon: String)->[String]{
         
         //takes a strign lat lon and returns the ten nearest airports as an array of strings..
         //format distance|four digit code|name
@@ -297,5 +298,59 @@ class utilityUserDB: NSObject {
         
         return ans
     }//end func
+    
+func whatIsMyUsername()->String{
+        var returner = ""
+        if openDatabase(){
+            
+            let query:String = "SELECT * FROM " + table_USER
+            let results:FMResultSet? = database.executeQuery(query, withArgumentsIn: [])
+            
+            while results?.next() == true {
+                returner = (results?.string(forColumn: (field_USERNAME))!)!
+            }
+        } //end open database
+        return returner
+
+    }
+    
+func getLastLoginTime()->Double{
+        var returner = Double()
+        if openDatabase(){
+            
+            let query:String = "SELECT * FROM " + table_USER
+            let results:FMResultSet? = database.executeQuery(query, withArgumentsIn: [])
+            
+            while results?.next() == true {
+                returner = (results?.double(forColumn: field_LOCATION_TIME))!
+            }
+        } //end open database
+        return returner
+        
+
+    }
+    
+func setLoginTime(){
+        if openDatabase(){
+            
+            let query:String = "UPDATE `\(table_USER)` SET `\(field_LOCATION_TIME)` = \(String(Date().timeIntervalSince1970))"
+ 
+            if !database.executeStatements(query) {
+                print("Failed to update user.")
+                print(database.lastError(), database.lastErrorMessage())
+            }  //end query
+            } //end open database
+    }
+    
+func setMyLatLon(newLatLon: String){
+        if openDatabase(){
+            let query:String = "UPDATE `\(table_USER)` SET `\(field_LATLON)` = \(newLatLon)"
+            
+            if !database.executeStatements(query) {
+                print("Failed to update position.")
+                print(database.lastError(), database.lastErrorMessage())
+            }  //end query
+        } //end open database
+    }  //end func
     
     }//end class

@@ -116,7 +116,7 @@ class VCInstall: UIViewController {
     
     
     func goToLogin(){
-        let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "login")
+        let vc : AnyObject! = self.storyboard!.instantiateViewController(withIdentifier: "loginScene")
         self.show(vc as! UIViewController, sender: vc)
 
     }

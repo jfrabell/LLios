@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -50,21 +50,57 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-U2-RTK">
-                                <rect key="frame" x="11" y="184" width="354" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cPV-U2-RTK">
+                                <rect key="frame" x="20" y="40" width="335" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="L7P-V0-hkB"/>
+                                </constraints>
                                 <state key="normal" title="Button" image="checkin"/>
                                 <connections>
                                     <segue destination="BYZ-38-t0r" kind="show" id="CtQ-ly-KEJ"/>
                                 </connections>
                             </button>
+                            <pickerView contentMode="scaleToFill" restorationIdentifier="pick_airport" translatesAutoresizingMaskIntoConstraints="NO" id="ucb-2o-0wr">
+                                <rect key="frame" x="20" y="210" width="335" height="216"/>
+                            </pickerView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="tv_search" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EOj-YC-la2">
+                                <rect key="frame" x="36" y="446" width="303" height="30"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" restorationIdentifier="btn_search" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kyR-At-Lhf">
+                                <rect key="frame" x="36" y="496" width="303" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="btn_search_click:" destination="PcD-2S-prI" eventType="touchUpInside" id="eKt-e5-M0F"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="kyR-At-Lhf" secondAttribute="trailing" constant="20" id="2dE-FA-38g"/>
+                            <constraint firstItem="EOj-YC-la2" firstAttribute="leading" secondItem="xvM-Bs-ekP" secondAttribute="leadingMargin" constant="20" id="7UI-v8-Sqi"/>
+                            <constraint firstItem="cPV-U2-RTK" firstAttribute="top" secondItem="XKP-QI-Ng7" secondAttribute="bottom" constant="20" id="AYQ-Dn-pfG"/>
+                            <constraint firstItem="kyR-At-Lhf" firstAttribute="top" secondItem="EOj-YC-la2" secondAttribute="bottom" constant="20" id="Dtu-Gd-Pru"/>
+                            <constraint firstItem="kyR-At-Lhf" firstAttribute="leading" secondItem="xvM-Bs-ekP" secondAttribute="leadingMargin" constant="20" id="HTS-ex-Xdh"/>
+                            <constraint firstItem="ucb-2o-0wr" firstAttribute="top" secondItem="cPV-U2-RTK" secondAttribute="bottom" constant="20" id="K17-f8-unm"/>
+                            <constraint firstAttribute="trailing" secondItem="cPV-U2-RTK" secondAttribute="trailing" constant="20" id="Xeq-sj-jBO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="EOj-YC-la2" secondAttribute="trailing" constant="20" id="cVT-iu-FEc"/>
+                            <constraint firstAttribute="trailing" secondItem="ucb-2o-0wr" secondAttribute="trailing" constant="20" id="dU2-M5-4xF"/>
+                            <constraint firstItem="ucb-2o-0wr" firstAttribute="leading" secondItem="xvM-Bs-ekP" secondAttribute="leading" constant="20" id="fr9-x0-Eyy"/>
+                            <constraint firstItem="cPV-U2-RTK" firstAttribute="leading" secondItem="xvM-Bs-ekP" secondAttribute="leading" constant="20" id="gCg-3W-6Yx"/>
+                            <constraint firstItem="EOj-YC-la2" firstAttribute="top" secondItem="ucb-2o-0wr" secondAttribute="bottom" constant="20" id="ivj-Vx-I1t"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="picker_airports" destination="ucb-2o-0wr" id="hAm-4j-st3"/>
+                        <outlet property="text_search" destination="EOj-YC-la2" id="0QC-UR-gAD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="k7F-t0-nzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1609" y="-869"/>
+            <point key="canvasLocation" x="-1612" y="-870.31484257871068"/>
         </scene>
         <!--Add Friends-->
         <scene sceneID="SMB-9h-FuU">
@@ -150,7 +186,7 @@
                                         <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5kA-jn-peA" id="y3U-3C-qQ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-Ql-TX1">
@@ -587,6 +623,6 @@
         <image name="person" width="507" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oxf-Sc-3X8"/>
+        <segue reference="CtQ-ly-KEJ"/>
     </inferredMetricsTieBreakers>
 </document>
