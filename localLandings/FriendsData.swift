@@ -8,7 +8,7 @@
 
 import Foundation
 
-class IceCreamStore
+class FriendsData
 {
     var people = ["Loading Friends"]
     

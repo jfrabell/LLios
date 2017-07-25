@@ -25,10 +25,15 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
         self.picker_airports.delegate = self
         self.picker_airports.dataSource = self
         
-        //let fish = utilityUserDB.shared.getAirportsWithinTen(lat: "40.0000", lon: "-83.0000")
-        let fish = utilityUserDB.shared.getAirportsWithinTen(lat: "35.0000", lon: "-83.0000")
+        let temp = utilityUserDB.shared.getMyLatLon()
         
-        let airport_split = buildAirportList(fish: fish)
+        let tempArray = temp.components(separatedBy: "~")
+        let lat = tempArray[0]
+        let lon = tempArray[1]
+        
+        let listOfTenAirports = utilityUserDB.shared.getAirportsWithinTen(lat: lat, lon: lon)
+        
+        let airport_split = buildAirportList(listOfTenAirports: listOfTenAirports)
         decimalDigit = airport_split
         
           }
@@ -42,6 +47,9 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     @IBAction func btn_search_click(_ sender: Any) {
         let searchedText = text_search.text
         print(searchedText as Any)
+        
+        picker_airports.selectRow(0, inComponent: 0, animated: true)
+        
     }
     
     //MARK:- PickerView Delegate & DataSource
@@ -56,28 +64,37 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.text_search.text = decimalDigit[row]
+        let alert = UIAlertController(title: "Check in at ", message: decimalDigit[row] + "?", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: yesClicked))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+
     }
     
     
-    func buildAirportList(fish : [String]) -> [String]{
+    func buildAirportList(listOfTenAirports : [String]) -> [String]{
         
         var returner = ["0","1"]
 
-        let end = fish.count-1
+        let end = listOfTenAirports.count-1
         
         returner.removeAll()
         
         for i in 0...end {
-            let thisAirportString = fish[i]
+            let thisAirportString = listOfTenAirports[i]
             let thisAirportArray = thisAirportString.components(separatedBy: "|")
             let theFinalAnswer = thisAirportArray[1] + " - " + thisAirportArray[2]
             returner.append(theFinalAnswer)
-                print(fish[i])
         }
         
         return returner
     }
     
+    func yesClicked(alert: UIAlertAction!) {
+        let alert = UIAlertController(title: "YAY ", message: "It worked!!!", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: nil))
+        self.present(alert, animated: true, completion: nil)
+    }
     
     
 }

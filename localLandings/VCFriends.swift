@@ -11,7 +11,7 @@ import UIKit
 class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
    
     //MARK: Properties
-    var dataStore = IceCreamStore()
+    var dataStore = FriendsData()
     var myPostRequest = PostRequest()
     @IBOutlet weak var TVFriendsOutlet: UITableView!
     let myCell = "reuseme"
@@ -69,13 +69,13 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
     }
     
     func updateTableView(myNewDataSet: [String]){
-        self.dataStore.changeData(myArray: myNewDataSet)
+        print(self.dataStore.changeData(myArray: myNewDataSet))
         DispatchQueue.main.async { [unowned self] in
             self.TVFriendsOutlet.reloadData()
         }
     }
     
-    func getDataStore() -> IceCreamStore{
+    func getDataStore() -> FriendsData{
         return self.dataStore
     }
     

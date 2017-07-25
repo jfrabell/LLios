@@ -35,7 +35,11 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         }
         else{
             print("No Need")
-            updateMapOldData(latitude: "40.03", longitude: "-82.89")
+            let latLon = utilityUserDB.shared.getMyLatLon()
+            let latLonList = latLon.components(separatedBy: "~")
+            let latFinal = latLonList[0]
+            let lonFinal = latLonList[1]
+            updateMapOldData(latitude: latFinal, longitude: lonFinal)
         }
         
     }
@@ -57,13 +61,13 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         let latitude = String(format: "%.4f", latestLocation!.coordinate.latitude)
         let longitude = String(format: "%.4f", latestLocation!.coordinate.longitude)
         
-        print("Latitude: \(latitude)")
-        print("Longitude: \(longitude)")
-        
         utilityUserDB.shared.setLoginTime()
+        let latLon = "\(latitude)~\(longitude)"
         
         updateMap(latitude: latitude, longitude: longitude)
         
+        utilityUserDB.shared.setMyLatLon(newLatLon: latLon)
+
         manager.stopUpdatingLocation()
     }
 

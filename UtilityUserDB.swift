@@ -344,7 +344,7 @@ func setLoginTime(){
     
 func setMyLatLon(newLatLon: String){
         if openDatabase(){
-            let query:String = "UPDATE `\(table_USER)` SET `\(field_LATLON)` = \(newLatLon)"
+            let query:String = "UPDATE `\(table_USER)` SET `\(field_LATLON)` = \"\(newLatLon)\""
             
             if !database.executeStatements(query) {
                 print("Failed to update position.")
@@ -352,5 +352,22 @@ func setMyLatLon(newLatLon: String){
             }  //end query
         } //end open database
     }  //end func
+    
+    func getMyLatLon()->String{
+        var returner = ""
+        
+        if openDatabase(){
+            let query:String = "SELECT * FROM " + table_USER
+            let results:FMResultSet? = database.executeQuery(query, withArgumentsIn: [])
+            
+            while results?.next() == true {
+                returner = (results?.string(forColumn: (field_LATLON))! as Any! as! String)
+            }
+        } //end open database
+
+        
+        return returner
+        
+    } //end func
     
     }//end class
