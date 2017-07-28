@@ -11,13 +11,14 @@ import MapKit
 import CoreLocation
 
 
-class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate {
+class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CLLocationManagerDelegate, UIWebViewDelegate {
     
     
     //MARK: Properties
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var mealNameLabel: UILabel!
     @IBOutlet weak var mapView: MKMapView!
+    @IBOutlet weak var adWebView: UIWebView!
     
     //INCLUDE NSTimer to update location hourly?
     
@@ -40,9 +41,11 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
             let latFinal = latLonList[0]
             let lonFinal = latLonList[1]
             updateMapOldData(latitude: latFinal, longitude: lonFinal)
-        }
+        } //end else
         
-    }
+        adWebView.loadRequest(URLRequest(url: URL(string: "http://ll.bunnyhutt.com/ads/CMH.html")!))
+        
+    } //end did load
 
 //only get location if we haven't got one in the last hour...
 

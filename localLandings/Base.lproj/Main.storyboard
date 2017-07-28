@@ -196,11 +196,11 @@
                                         <rect key="frame" x="0.0" y="28" width="984" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5kA-jn-peA" id="y3U-3C-qQ3">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1tW-Ql-TX1">
-                                                    <rect key="frame" x="0.0" y="0.0" width="288" height="512.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="984" height="512.5"/>
                                                     <subviews>
                                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" translatesAutoresizingMaskIntoConstraints="NO" id="qYP-NZ-6m3" customClass="IVFriends">
                                                             <rect key="frame" x="0.0" y="0.0" width="50" height="512.5"/>
@@ -211,7 +211,7 @@
                                                             </constraints>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fct-bs-FNu">
-                                                            <rect key="frame" x="50" y="0.0" width="238" height="512.5"/>
+                                                            <rect key="frame" x="50" y="0.0" width="934" height="512.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -284,7 +284,7 @@
                                         <rect key="frame" x="0.0" y="28" width="984" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lOi-ct-IVS" id="cyF-8t-c9V">
-                                            <rect key="frame" x="0.0" y="0.0" width="984" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="984" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="dealsLabel" text="This is a bunch of horse hockey" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wax-iz-WWX">
@@ -443,10 +443,21 @@
                                         <rect key="frame" x="0.0" y="110.5" width="994" height="1205.5"/>
                                         <subviews>
                                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="ZOc-aR-sc6">
-                                                <rect key="frame" x="0.0" y="0.0" width="994" height="1205.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="994" height="1109.5"/>
                                             </mapView>
+                                            <webView contentMode="scaleToFill" scalesPageToFit="YES" translatesAutoresizingMaskIntoConstraints="NO" id="lBg-qd-eeT">
+                                                <rect key="frame" x="0.0" y="1109.5" width="994" height="96"/>
+                                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="96" id="PQO-W8-YUf"/>
+                                                </constraints>
+                                            </webView>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="lBg-qd-eeT" firstAttribute="leading" secondItem="Cj8-MD-CDh" secondAttribute="leading" id="DU4-3K-8La"/>
+                                            <constraint firstItem="lBg-qd-eeT" firstAttribute="top" secondItem="ZOc-aR-sc6" secondAttribute="bottom" id="LUI-yZ-BHC"/>
+                                            <constraint firstAttribute="bottom" secondItem="lBg-qd-eeT" secondAttribute="bottom" id="ZoF-bX-bNG"/>
+                                            <constraint firstAttribute="trailing" secondItem="lBg-qd-eeT" secondAttribute="trailing" id="am3-aS-Nze"/>
                                             <constraint firstAttribute="trailing" secondItem="ZOc-aR-sc6" secondAttribute="trailing" id="fTm-cb-EQy"/>
                                         </constraints>
                                     </stackView>
@@ -468,6 +479,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="adWebView" destination="lBg-qd-eeT" id="Rah-af-zPc"/>
                         <outlet property="mapView" destination="ZOc-aR-sc6" id="Xdk-z7-MjF"/>
                     </connections>
                 </viewController>
@@ -675,6 +687,6 @@
         <image name="person" width="507" height="512"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Oxf-Sc-3X8"/>
+        <segue reference="79a-y1-dGS"/>
     </inferredMetricsTieBreakers>
 </document>

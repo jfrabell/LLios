@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class VCDeals: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var dataStore = DealsData()
@@ -15,8 +16,6 @@ class VCDeals: UIViewController, UITableViewDelegate, UITableViewDataSource {
     @IBOutlet weak var TvDealsOutlet: UITableView!
 
     let myCell = "dealsPrototype"
-
-    @IBOutlet weak var cellOutlet: DealsCustomCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
