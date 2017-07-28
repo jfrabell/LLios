@@ -24,6 +24,10 @@
 		1F81C69A1F0DB5860077BC0C /* UtilityUserDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F81C6991F0DB5860077BC0C /* UtilityUserDB.swift */; };
 		1F89E59E1F0D32B000939E5C /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F89E59D1F0D32B000939E5C /* libsqlite3.tbd */; settings = {ATTRIBUTES = (Required, ); }; };
 		1F94C3C31F1CEBEA00039060 /* VCRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F94C3C21F1CEBEA00039060 /* VCRegister.swift */; };
+		1FA445111F2AB69D00C097EF /* DealsCustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA445101F2AB69D00C097EF /* DealsCustomCell.swift */; };
+		1FA445131F2AB6BE00C097EF /* DealsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA445121F2AB6BE00C097EF /* DealsData.swift */; };
+		1FA445161F2AB6EF00C097EF /* DealsPostRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA445141F2AB6EF00C097EF /* DealsPostRequest.swift */; };
+		1FA445171F2AB6EF00C097EF /* DealsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FA445151F2AB6EF00C097EF /* DealsTableViewCell.swift */; };
 		1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E991E4B6EFD0018C06F /* VCChat.swift */; };
 		1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */; };
 		1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */; };
@@ -38,15 +42,15 @@
 /* Begin PBXFileReference section */
 		1F071D831EF0963F000AA587 /* VCLogin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogin.swift; sourceTree = "<group>"; };
 		1F1AF79E1F1FADF100BD4650 /* VCLogout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCLogout.swift; sourceTree = "<group>"; };
-		1F1AF7A01F1FB1FD00BD4650 /* aaTODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = aaTODO; sourceTree = "<group>"; };
+		1F1AF7A01F1FB1FD00BD4650 /* aaTODO */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = aaTODO; path = localLandings/aaTODO; sourceTree = "<group>"; };
 		1F1D124A1E4A3CBA00077A73 /* localLandings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = localLandings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1F1D124F1E4A3CBA00077A73 /* VCMainScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VCMainScreen.swift; sourceTree = "<group>"; };
 		1F1D12521E4A3CBA00077A73 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1F1D12541E4A3CBA00077A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1F1D12591E4A3CBA00077A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F1D12541E4A3CBA00077A73 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = localLandings/Assets.xcassets; sourceTree = "<group>"; };
+		1F1D12591E4A3CBA00077A73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = localLandings/Info.plist; sourceTree = "<group>"; };
 		1F3047241F18096A0093F847 /* VCInstall.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCInstall.swift; sourceTree = "<group>"; };
-		1F3047261F1815E40093F847 /* ap.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ap.tsv; sourceTree = "<group>"; };
+		1F3047261F1815E40093F847 /* ap.tsv */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = ap.tsv; path = localLandings/ap.tsv; sourceTree = "<group>"; };
 		1F81C6841F0D851F0077BC0C /* localLandings-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "localLandings-Bridging-Header.h"; sourceTree = "<group>"; };
 		1F81C6851F0D85200077BC0C /* FMDB.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDB.h; sourceTree = "<group>"; };
 		1F81C6861F0D85200077BC0C /* FMDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FMDatabase.h; sourceTree = "<group>"; };
@@ -63,6 +67,10 @@
 		1F81C6991F0DB5860077BC0C /* UtilityUserDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UtilityUserDB.swift; path = ../UtilityUserDB.swift; sourceTree = "<group>"; };
 		1F89E59D1F0D32B000939E5C /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		1F94C3C21F1CEBEA00039060 /* VCRegister.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCRegister.swift; sourceTree = "<group>"; };
+		1FA445101F2AB69D00C097EF /* DealsCustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsCustomCell.swift; sourceTree = "<group>"; };
+		1FA445121F2AB6BE00C097EF /* DealsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsData.swift; sourceTree = "<group>"; };
+		1FA445141F2AB6EF00C097EF /* DealsPostRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsPostRequest.swift; sourceTree = "<group>"; };
+		1FA445151F2AB6EF00C097EF /* DealsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DealsTableViewCell.swift; sourceTree = "<group>"; };
 		1FE36E991E4B6EFD0018C06F /* VCChat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCChat.swift; sourceTree = "<group>"; };
 		1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCCheckIn.swift; sourceTree = "<group>"; };
 		1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VCDeals.swift; sourceTree = "<group>"; };
@@ -92,6 +100,10 @@
 				1F1D124C1E4A3CBA00077A73 /* localLandings */,
 				1F1D124B1E4A3CBA00077A73 /* Products */,
 				1F89E59C1F0D32AF00939E5C /* Frameworks */,
+				1F1AF7A01F1FB1FD00BD4650 /* aaTODO */,
+				1F3047261F1815E40093F847 /* ap.tsv */,
+				1F1D12541E4A3CBA00077A73 /* Assets.xcassets */,
+				1F1D12591E4A3CBA00077A73 /* Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -106,17 +118,13 @@
 		1F1D124C1E4A3CBA00077A73 /* localLandings */ = {
 			isa = PBXGroup;
 			children = (
-				1F1AF7A01F1FB1FD00BD4650 /* aaTODO */,
-				1F3047261F1815E40093F847 /* ap.tsv */,
 				1F1D12511E4A3CBA00077A73 /* Main.storyboard */,
 				1F1D124D1E4A3CBA00077A73 /* AppDelegate.swift */,
-				1F1D12541E4A3CBA00077A73 /* Assets.xcassets */,
-				1F1D12591E4A3CBA00077A73 /* Info.plist */,
+				1FA4450F1F2AB65E00C097EF /* Deals */,
 				1FE36EA71E4C9F2B0018C06F /* Friends */,
 				1F89E59F1F0D349400939E5C /* db */,
 				1FE36E991E4B6EFD0018C06F /* VCChat.swift */,
 				1FE36E9A1E4B6EFD0018C06F /* VCCheckIn.swift */,
-				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
 				1FE36E9D1E4B6EFD0018C06F /* VCHome.swift */,
 				1F3047241F18096A0093F847 /* VCInstall.swift */,
 				1F071D831EF0963F000AA587 /* VCLogin.swift */,
@@ -155,6 +163,18 @@
 				1F81C6841F0D851F0077BC0C /* localLandings-Bridging-Header.h */,
 			);
 			name = db;
+			sourceTree = "<group>";
+		};
+		1FA4450F1F2AB65E00C097EF /* Deals */ = {
+			isa = PBXGroup;
+			children = (
+				1FE36E9B1E4B6EFD0018C06F /* VCDeals.swift */,
+				1FA445121F2AB6BE00C097EF /* DealsData.swift */,
+				1FA445151F2AB6EF00C097EF /* DealsTableViewCell.swift */,
+				1FA445101F2AB69D00C097EF /* DealsCustomCell.swift */,
+				1FA445141F2AB6EF00C097EF /* DealsPostRequest.swift */,
+			);
+			name = Deals;
 			sourceTree = "<group>";
 		};
 		1FE36EA71E4C9F2B0018C06F /* Friends */ = {
@@ -243,10 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FA445111F2AB69D00C097EF /* DealsCustomCell.swift in Sources */,
+				1FA445161F2AB6EF00C097EF /* DealsPostRequest.swift in Sources */,
 				1FE36EAD1E4CAFF40018C06F /* FriendsCustomCell.swift in Sources */,
 				1F81C6951F0D85200077BC0C /* FMDatabasePool.m in Sources */,
 				1FE36EAF1E4CB0D20018C06F /* PostRequest.swift in Sources */,
 				1F81C6911F0D85200077BC0C /* FMDatabase.m in Sources */,
+				1FA445171F2AB6EF00C097EF /* DealsTableViewCell.swift in Sources */,
 				1FE36EA01E4B6EFD0018C06F /* VCDeals.swift in Sources */,
 				1F81C6941F0D85200077BC0C /* FMDatabaseAdditions.m in Sources */,
 				1FE36EA21E4B6EFD0018C06F /* VCHome.swift in Sources */,
@@ -254,6 +277,7 @@
 				1F94C3C31F1CEBEA00039060 /* VCRegister.swift in Sources */,
 				1FE36E9E1E4B6EFD0018C06F /* VCChat.swift in Sources */,
 				1F071D841EF0963F000AA587 /* VCLogin.swift in Sources */,
+				1FA445131F2AB6BE00C097EF /* DealsData.swift in Sources */,
 				1FE36EAB1E4CAF840018C06F /* FriendsData.swift in Sources */,
 				1FE36E9F1E4B6EFD0018C06F /* VCCheckIn.swift in Sources */,
 				1F1D12501E4A3CBA00077A73 /* VCMainScreen.swift in Sources */,
