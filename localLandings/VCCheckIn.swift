@@ -12,6 +12,11 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     
     @IBOutlet weak var picker_airports: UIPickerView!
     @IBOutlet weak var text_search: UITextField!
+    
+    @IBOutlet weak var checkInAI: UIActivityIndicatorView!
+    
+    var chosenAirport = ""
+    
     var decimalDigit = ["Searching for Nearby Airports"," "," "," "]
 
     
@@ -46,9 +51,12 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     
     @IBAction func btn_search_click(_ sender: Any) {
         let searchedText = text_search.text
-        print(searchedText as Any)
+        print(searchedText as! String)
         
         picker_airports.selectRow(0, inComponent: 0, animated: true)
+        
+        checkInAI.stopAnimating()
+        checkInAI.isHidden = true;
         
     }
     
@@ -64,6 +72,7 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.text_search.text = decimalDigit[row]
+        self.chosenAirport = decimalDigit[row]
         let alert = UIAlertController(title: "Check in at ", message: decimalDigit[row] + "?", preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: yesClicked))
         alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
@@ -91,10 +100,21 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     }
     
     func yesClicked(alert: UIAlertAction!) {
-        let alert = UIAlertController(title: "YAY ", message: "It worked!!!", preferredStyle: UIAlertControllerStyle.alert)
+        
+        //http://ll.bunnyhutt.com/checkin.php?username=jfrabell&&overnight=KJFK%20-%20John%20F%20Kennedy%20Intl
+
+        print (chosenAirport)
+        checkInAI.isHidden = false
+        checkInAI.startAnimating()
+        let alert = UIAlertController(title: "YAY ", message: chosenAirport, preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
+    
+    func notify( sendIt: inout [String]){
+        print("Result",sendIt)        
+    }
+
     
     
 }
