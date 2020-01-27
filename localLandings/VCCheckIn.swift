@@ -73,9 +73,9 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         self.text_search.text = decimalDigit[row]
         self.chosenAirport = decimalDigit[row]
-        let alert = UIAlertController(title: "Check in at ", message: decimalDigit[row] + "?", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: yesClicked))
-        alert.addAction(UIAlertAction(title: "No", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "Check in at ", message: decimalDigit[row] + "?", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: yesClicked))
+        alert.addAction(UIAlertAction(title: "No", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
 
     }
@@ -106,8 +106,8 @@ class VCCheckIn: UIViewController ,UIPickerViewDelegate, UIPickerViewDataSource,
         print (chosenAirport)
         checkInAI.isHidden = false
         checkInAI.startAnimating()
-        let alert = UIAlertController(title: "YAY ", message: chosenAirport, preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertActionStyle.default, handler: nil))
+        let alert = UIAlertController(title: "YAY ", message: chosenAirport, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Yes", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
     

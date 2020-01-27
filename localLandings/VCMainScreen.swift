@@ -90,8 +90,8 @@ class VCMainScreen: UIViewController, UITextFieldDelegate, MKMapViewDelegate, CL
         let myCoordinate = CLLocation(latitude: newLat!, longitude: newLon!)
         let regionRadius: CLLocationDistance = 5280
         
-        let coordinateRegion = MKCoordinateRegionMakeWithDistance(myCoordinate.coordinate,
-                                                                  regionRadius * 2.0, regionRadius * 2.0)
+        let coordinateRegion = MKCoordinateRegion.init(center: myCoordinate.coordinate,
+                                                                  latitudinalMeters: regionRadius * 2.0, longitudinalMeters: regionRadius * 2.0)
         self.mapView.setRegion(coordinateRegion, animated: true)
 
     }

@@ -290,8 +290,7 @@ func getAirportsWithinTen(lat: String, lon: String)->[String]{
         }
         
         let q = ans.count
-        
-        for i in (11...q).reversed() {
+    for i in (11...q).reversed(){
             let j = i-1
             ans.remove(at: j)
         }

@@ -37,13 +37,13 @@ class VCLogin: UIViewController {
         
         //verify username and password entered
         if(userName.text?.isEmpty)!{
-            let alert = UIAlertController(title: "Alert", message: "Please enter a user name", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Alert", message: "Please enter a user name", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else if(passWord.text?.isEmpty)!{
-            let alert = UIAlertController(title: "Alert", message: "Please enter a password", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Alert", message: "Please enter a password", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
         }
         else{
@@ -54,7 +54,7 @@ class VCLogin: UIViewController {
             //username and password entered.
             
             var returnData = "Start,"
-            var request = URLRequest(url: URL(string: "http://ll.bunnyhutt.com/login.php")!)
+            var request = URLRequest(url: URL(string: "https://ll.darattman.com/login.php")!)
             request.httpMethod = "POST"
             
             let userNameSubmitted = userName.text
@@ -116,8 +116,8 @@ class VCLogin: UIViewController {
         }
         else{
             DispatchQueue.main.async(execute: {
-            let alert = UIAlertController(title: "Network Error", message: "Please verify access to the internet", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Network Error", message: "Please verify access to the internet", preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
             })
         }
@@ -125,8 +125,8 @@ class VCLogin: UIViewController {
         if(successArray[1].contains("false")){
             DispatchQueue.main.async(execute: {
 
-            let alert = UIAlertController(title: "Login Error", message: successOutput, preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "Click", style: UIAlertActionStyle.default, handler: nil))
+            let alert = UIAlertController(title: "Login Error", message: successOutput, preferredStyle: UIAlertController.Style.alert)
+            alert.addAction(UIAlertAction(title: "Click", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
                 })
         }

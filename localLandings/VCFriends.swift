@@ -15,7 +15,6 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
     var myPostRequest = PostRequest()
     @IBOutlet weak var TVFriendsOutlet: UITableView!
     let myCell = "reuseme"
-    //let mypostRequest = PostRequest()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +26,7 @@ class VCFriends: UIViewController, UITableViewDelegate, UITableViewDataSource {
         myPostRequest.postRequest(VCFriends: self)
         
         // Setup the auto sizing of the cells
-        TVFriendsOutlet.rowHeight = UITableViewAutomaticDimension
+        TVFriendsOutlet.rowHeight = UITableView.automaticDimension
         TVFriendsOutlet.estimatedRowHeight = 140
         
     }

@@ -36,7 +36,7 @@ class CheckInPostRequest{
         //MARK: HTTPMethod
         let HTTPMethod_Get                      = "POST"
         
-        let callURL = URL.init(string: "http://ll.bunnyhutt.com/friendsb.php?username=jfrabell")
+        let callURL = URL.init(string: "https://ll.darattman.com/friendsb.php?username=jfrabell")
         
         var request = URLRequest.init(url: callURL!)
         

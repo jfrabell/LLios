@@ -1,0 +1,7 @@
+{
+    "_links": {
+        "register": { "https://ll.darattman.com/login.php" },
+        "login": { "/orders?page=2" },
+        "nearest": { "/orders?id={order_id}" }
+    }
+}

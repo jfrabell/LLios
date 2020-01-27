@@ -13,6 +13,8 @@ class VCInstall: UIViewController {
     
     @IBOutlet weak var textProgress: UILabel!
 
+    let group = DispatchGroup()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,9 @@ class VCInstall: UIViewController {
         print("Install")
         progressBar.setProgress(0, animated: true)
         fillDB()
+        group.notify(queue: .main) {
+            self.goToLogin()
+        }
         
     }
     
@@ -36,7 +41,7 @@ class VCInstall: UIViewController {
         let csvRows = self.csv(data: data!)
         let numberOfRows = csvRows.count
 
-        
+        group.enter()
         DispatchQueue.global(qos: .utility).async {
             if(utilityUserDB.shared.createAirportTable()){
             for i in 0 ..< numberOfRows {
@@ -56,21 +61,20 @@ class VCInstall: UIViewController {
                     } //end if insert user
 
                     
-                
+                self.group.enter()
                 DispatchQueue.main.async {
                     // now update UI on main thread
                     let intprogressnumber = Int(floor(((Float(i) / Float(numberOfRows))*100)))
                     let toShow = String(intprogressnumber)
                     self.progressBar.setProgress(Float(i) / Float(numberOfRows), animated: true)
                     self.textProgress.text = toShow + "% complete"
+                    self.group.leave()
                 }  //end second async
                 
             }//end iterator loop
-                //go to login
-                self.goToLogin()
+                
             }//end create database
-                //go to login
-                self.goToLogin()
+            self.group.leave()
         }//end of block of async
         
 

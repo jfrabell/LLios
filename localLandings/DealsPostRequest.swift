@@ -32,7 +32,7 @@ class DealsPostRequest{
         if mutableCity=="No checkins yet"{
         mutableCity = "KFLL"
         }
-        let callURL = URL.init(string: "http://ll.bunnyhutt.com/getlocaldeal.php?city=\(mutableCity)")
+        let callURL = URL.init(string: "https://ll.darattman.com/getlocaldeal.php?city=\(mutableCity)")
         
         var listOfDeals = ["Yo","Momma","so","fat"]
         listOfDeals.removeAll()

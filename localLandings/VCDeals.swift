@@ -30,7 +30,7 @@ class VCDeals: UIViewController, UITableViewDelegate, UITableViewDataSource {
         myPostRequest.dealsPostRequest(VCDeals: self, city: "KBOS")
         
         // Setup the auto sizing of the cells
-        TvDealsOutlet.rowHeight = UITableViewAutomaticDimension
+        TvDealsOutlet.rowHeight = UITableView.automaticDimension
         TvDealsOutlet.estimatedRowHeight = 140
 
         
